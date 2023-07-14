@@ -5,7 +5,7 @@ module "global" {
 module "example-repository" {
   source = "../../modules/repository"
 
-  repository_name = "example-repository"
+  repository_name = "onecx-db-postgresql-operator"
   team_permission = "maintain"
   team_id         = module.example-team.team_id
   application_ids = module.global.applications_sonarcloud_id
@@ -14,8 +14,8 @@ module "example-repository" {
 module "example-team" {
   source = "../../modules/team"
 
-  team_name        = "example-team"
-  team_description = "example description"
+  team_name        = "onecx-k8s"
+  team_description = "onecx-k8s"
   team_file_path   = "products/example-product/team.csv"
   repository_name  = module.example-repository.repository_name
   repository_id    = module.example-repository.repository_id
