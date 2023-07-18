@@ -6,6 +6,16 @@ provider "sonarcloud" {
   organization = local.organisation
 }
 
+terraform {
+  backend "remote" {
+    organization = local.organisation
+
+    workspaces {
+      name = "devops"
+    }
+  }
+}
+
 locals {
   organisation = "onecx"
   applications = {
@@ -14,5 +24,5 @@ locals {
 }
 
 module "products" {
-  source = "./products/example-product"
+  source = "./products/onecx-k8s"
 }
