@@ -8,7 +8,7 @@ provider "sonarcloud" {
 
 terraform {
   backend "remote" {
-    organization = local.organisation
+    organization = "onecx"
 
     workspaces {
       name = "devops"
