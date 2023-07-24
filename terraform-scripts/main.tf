@@ -1,3 +1,8 @@
+terraform {
+
+  backend "s3" {}
+}
+
 provider "github" {
   owner = local.organisation
 }
@@ -6,18 +11,8 @@ provider "sonarcloud" {
   organization = local.organisation
 }
 
-terraform {
-  backend "remote" {
-    organization = "onecx"
-
-    workspaces {
-      name = "devops"
-    }
-  }
-}
-
 locals {
-  organisation = "onecx"
+  organisation = "onecx-devops"
   applications = {
     sonarcloud = "39077913"
   }

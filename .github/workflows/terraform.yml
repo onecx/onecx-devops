@@ -18,34 +18,32 @@ jobs:
     permissions:
       pull-requests: write
 
-    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
         shell: bash
         working-directory: ./terraform-scripts
 
     steps:
-    #  Checkout the repository to the GitHub Actions runner
-    - name: Checkout
-      uses: actions/checkout@v3
+      #  Checkout the repository to the GitHub Actions runner
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
-    - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v1
-      with:
-        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+      - name: Terraform Init
+        id: init
+        run: terraform init -backend-config="access_key=${{ secrets.AWS_ACCESS_KEY_ID }}" -backend-config="secret_key=${{ secrets.AWS_SECRET_ACCESS_KEY }}" -backend-config="./config.s3.tfbackend"
 
-    # Checks that all Terraform configuration files adhere to a canonical format
-    - name: Terraform Format
-      run: terraform fmt -check
-      continue-on-error: true
+      - name: Terraform Plan
+        run: terraform plan -input=false
 
-    # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc.
-    - name: Terraform Init
-      run: terraform init -force-copy
+      - name: Terraform Apply
+        env:
+          GITHUB_TOKEN: ${{ secrets.CI_PAT }}
+#          SONARCLOUD_TOKEN: ${{ secrets.SNR }}
+        run: terraform apply -auto-approve -input=false
 
-    # Generates an execution plan for Terraform
-    - name: Terraform Plan
-      run: terraform plan -input=false
-
-    # terraform apply needs to be executed via terraform cloud after plan was executed successfully
+      - name: Upload terraform lock file to artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: terraform_lock
+          path: /home/runner/work/devops/devops/terraform-scripts/.terraform.lock.hcl
+        continue-on-error: true
