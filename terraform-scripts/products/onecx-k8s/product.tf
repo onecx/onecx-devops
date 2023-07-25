@@ -7,11 +7,11 @@ module "example-repository" {
 
   repository_name = "onecx-db-postgresql-operator"
   team_permission = "maintain"
-  team_id         = module.example-team.team_id
+  team_id         = module.onecx-k8s-team.team_id
   application_ids = module.global.applications_sonarcloud_id
 }
 
-module "example-team" {
+module "onecx-k8s-team" {
   source = "../../modules/team"
 
   team_name        = "onecx-k8s"

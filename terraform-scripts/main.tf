@@ -9,18 +9,11 @@ terraform {
 }
 
 provider "github" {
-  owner = local.organisation
+  owner = "onecx"
 }
 
 provider "sonarcloud" {
-  organization = local.organisation
-}
-
-locals {
-  organisation = "onecx"
-  applications = {
-    sonarcloud = "35827638"
-  }
+  organization = "onecx"
 }
 
 module "products" {
