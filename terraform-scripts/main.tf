@@ -1,3 +1,13 @@
+terraform {
+  cloud {
+    organization = "onecx-devops-github"
+
+    workspaces {
+      name = "devops"
+    }
+  }
+}
+
 provider "github" {
   owner = local.organisation
 }
@@ -14,5 +24,5 @@ locals {
 }
 
 module "products" {
-  source = "./products/example-product"
+  source = "./products/onecx-k8s"
 }

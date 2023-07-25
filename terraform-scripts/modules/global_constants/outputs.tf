@@ -1,5 +1,5 @@
 output "organisation" {
-  value = "onecx-devops"
+  value = "onecx"
 }
 
 output "applications_sonarcloud_id" {

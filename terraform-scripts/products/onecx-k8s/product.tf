@@ -16,7 +16,7 @@ module "example-team" {
 
   team_name        = "onecx-k8s"
   team_description = "onecx-k8s"
-  team_file_path   = "products/example-product/team.csv"
+  team_file_path   = "products/onecx-k8s/team.csv"
   repository_name  = module.example-repository.repository_name
   repository_id    = module.example-repository.repository_id
 }
