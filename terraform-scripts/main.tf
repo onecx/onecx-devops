@@ -19,7 +19,7 @@ provider "sonarcloud" {
 locals {
   organisation = "onecx"
   applications = {
-    sonarcloud = "39077913"
+    sonarcloud = "35827638"
   }
 }
 
