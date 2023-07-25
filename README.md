@@ -32,7 +32,7 @@ To obtain your SonarCloud token go to:
 
 Sonar token can expire in GitHub, if so replace `SONAR_TOKEN` in GitHub organization:
 
-Organization &rarr; Settings &rarr; Security &rarr; Secrets and variables &rarr; [Actions](https://github.com/organizations/onecx-devops/settings/secrets/actions)
+Organization &rarr; Settings &rarr; Security &rarr; Secrets and variables
 
 ## Add new product
 
