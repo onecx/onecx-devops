@@ -25,7 +25,9 @@ jobs:
     steps:
       #  Checkout the repository to the GitHub Actions runner
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.5.3
+        with:
+          token: ${{ secrets.DEVOPS_PAT }}
 
       - name: Terraform Init
         id: init
@@ -36,7 +38,8 @@ jobs:
 
       - name: Terraform Apply
         env:
-          GITHUB_TOKEN: ${{ secrets.CI_PAT }}
+          GITHUB_TOKEN: ${{ secrets.DEVOPS_PAT }}
+          TF_VAR_github_token: ${{ secrets.DEVOPS_PAT }}
 #          SONARCLOUD_TOKEN: ${{ secrets.SNR }}
         run: terraform apply -auto-approve -input=false
 
