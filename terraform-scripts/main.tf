@@ -1,3 +1,13 @@
+terraform {
+  cloud {
+    organization = "onecx-devops-github"
+
+    workspaces {
+      name = "devops"
+    }
+  }
+}
+
 provider "github" {
   owner = local.organisation
 }
@@ -9,10 +19,10 @@ provider "sonarcloud" {
 locals {
   organisation = "onecx"
   applications = {
-    sonarcloud = "39077913"
+    sonarcloud = "35827638"
   }
 }
 
 module "products" {
-  source = "./products/example-product"
+  source = "./products/onecx-k8s"
 }
