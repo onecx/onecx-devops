@@ -18,7 +18,7 @@ terraform apply
 
 ### Tokens to run terraform
 
-In order to run the terraform scripts you need to set `GITHUB_TOKEN` & `SONARCLOUD_TOKEN` as env vars locally.
+In order to run the terraform scripts you need to set `GITHUB_TOKEN` & `SONARCLOUD_TOKEN` as env vars locally
 
 To obtain your GitHub token go to:
 
