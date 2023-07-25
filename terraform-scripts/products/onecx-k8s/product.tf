@@ -21,9 +21,15 @@ module "onecx-k8s-team" {
   repository_id    = module.example-repository.repository_id
 }
 
-module "sonar" {
+module "sonarcloud" {
   source = "../../modules/sonarcloud"
 
   organisation    = module.global.organisation
+  repository_name = module.example-repository.repository_name
+}
+
+module "files" {
+  source = "../../modules/dependencies"
+
   repository_name = module.example-repository.repository_name
 }
