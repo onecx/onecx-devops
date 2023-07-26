@@ -4,7 +4,21 @@ This repository automates the provisioning and management of GitHub repositories
 modules for defining repositories, teams, and applications, enabling version-controlled, scalable management 
 of collaborative projects or products.
 
-# Getting started
+# Add new product
+
+* Create new folder in `terraform-scripts -> products` for your product
+* Add module below to `terraform-scripts/main.tf`
+```
+module "your_product_name" {
+source = "./products/your_product_folder"
+}
+```
+* Copy wished modules of `./example-product.md` to your new product folder
+* Create Merge request for your changes and check if `terraform plan` is successful
+* Merge your request `terraform apply` will be executed and your changes will be provisioned
+
+
+# Start terraform locally
 
 Initialize this repository check for changes and apply:
 
@@ -14,9 +28,7 @@ terraform plan
 terraform apply
 ```
 
-## Tokens
-
-### Tokens to run terraform
+## Tokens to run terraform
 
 In order to run the terraform scripts you need to set `GITHUB_TOKEN` & `SONARCLOUD_TOKEN` as env vars locally
 
@@ -33,13 +45,3 @@ To obtain your SonarCloud token go to:
 Sonar token can expire in GitHub, if so replace `SONAR_TOKEN` in GitHub organization:
 
 Organization &rarr; Settings &rarr; Security &rarr; Secrets and variables
-
-## Add new product
-
-Check `terraform-scripts -> products -> example-product` as template.
-* Create new folder in `terraform-scripts -> products`
-* Copy `example-product.tf` to your new folder and change 
-  * `repository_name` in repository module
-  * `team_name` and `team_description` according your team
-  * Copy `team.csv` to your new folder, add names and roles of your teammates and copy its path starting with `/products` to `team_file_path`
-* Add names of team member also to `members.csv` with `write` role

@@ -51,12 +51,13 @@ jobs:
       run: terraform plan -input=false
 
       # On push to "main", build or change infrastructure according to Terraform configuration files
-      # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
-    #- name: Terraform Apply
-    #  env:
-    #    GITHUB_TOKEN: ${{ secrets.DEVOPS_PAT }}
-    #    SONARCLOUD_TOKEN: ${{ secrets.SONAR_TOKEN }}
-    #  # if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    #  run: terraform apply -auto-approve -input=false
-    #  continue-on-error: true
+      # Serves for testing purposes as workflow is executed with every push to any branch (Peter Muschick, 26.07.23)
+      # Remove when stable configuration is running
+#    - name: Terraform Apply
+#      env:
+#        GITHUB_TOKEN: ${{ secrets.DEVOPS_PAT }}
+#        SONARCLOUD_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#      # if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+#      run: terraform apply -auto-approve -input=false
+#      continue-on-error: true
 
