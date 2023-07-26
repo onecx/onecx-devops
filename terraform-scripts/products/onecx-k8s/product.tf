@@ -21,8 +21,15 @@ module "team" {
   repository_id    = module.repository.repository_id
 }
 
-module "quarkus" {
-  source = "../../modules/quarkus"
+module "sonarcloud" {
+  source = "../../modules/sonarcloud"
+
+  organisation    = module.global.organisation
+  repository_name = module.repository.repository_name
+}
+
+module "dependencies" {
+  source = "../../modules/dependencies"
 
   repository_name = module.repository.repository_name
 }
