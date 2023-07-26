@@ -3,7 +3,7 @@ resource "github_repository" "repository" {
   has_issues       = true
   has_projects     = true
   auto_init        = true
-  license_template = "apache-2.0"
+  license_template = "mit"
 }
 
 resource "github_branch_default" "main" {
