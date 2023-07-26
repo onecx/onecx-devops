@@ -5,10 +5,11 @@ module "global" {
 module "repository" {
   source = "../../modules/repository"
 
-  repository_name = "onecx-db-postgresql-operator"
-  team_permission = "maintain"
-  team_id         = module.team.team_id
-  application_ids = module.global.applications_sonarcloud_id
+  repository_name        = "onecx-db-postgresql-operator"
+  repository_description = "description"
+  team_permission        = "maintain"
+  team_id                = module.team.team_id
+  application_ids        = module.global.applications_sonarcloud_id
 }
 
 module "team" {

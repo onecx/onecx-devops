@@ -3,22 +3,24 @@
 Add *mandatory* `global` module to have access on global variables such as `organisation`. 
 ```
 module "global" {
-source = "../../modules/global_constants"
+  source = "../../modules/global_constants"
 }
 ```
 
 Add `repository` and use:
 - `your_repository_name` for repository name
+- `your_repository_description` for repository description
 - `team_permission` set permission for team to `pull, triage, push, maintain or admin`
 
 ```
 module "repository" {
-source = "../../modules/repository"
+  source = "../../modules/repository"
 
-repository_name = "your_repository_name"
-team_permission = "maintain"
-team_id         = module.team.team_id
-application_ids = module.global.applications_sonarcloud_id
+  repository_name        = "your_repository_name"
+  repository_description = "your_repository_description"
+  team_permission        = "maintain"
+  team_id                = module.team.team_id
+  application_ids        = module.global.applications_sonarcloud_id
 }
 ```
 
@@ -30,21 +32,21 @@ Add `team` and use:
 Possible roles are `maintainer` or `member` 
 ```
 module "team" {
-source = "../../modules/team"
+  source = "../../modules/team"
 
-team_name        = "your_team_name"
-team_description = "your_team_description"
-team_file_path   = "products/your_folder_name/team.csv"
-repository_name  = module.repository.repository_name
-repository_id    = module.repository.repository_id
+  team_name        = "your_team_name"
+  team_description = "your_team_description"
+  team_file_path   = "products/your_folder_name/team.csv"
+  repository_name  = module.repository.repository_name
+  repository_id    = module.repository.repository_id
 }
 ```
 
 Add `quarkus` module to get GitHub workflow files for quarkus applications:
 ```
 module "quarkus" {
-source = "../../modules/quarkus"
+  source = "../../modules/quarkus"
 
-repository_name = module.repository.repository_name
+  repository_name = module.repository.repository_name
 }
 ```

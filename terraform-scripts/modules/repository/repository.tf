@@ -1,5 +1,6 @@
 resource "github_repository" "repository" {
   name             = var.repository_name
+  description      = var.repository_description
   has_issues       = true
   has_projects     = true
   auto_init        = true
