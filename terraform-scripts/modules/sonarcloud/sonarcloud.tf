@@ -11,7 +11,7 @@ resource "github_repository_file" "workflow_build" {
   repository          =  var.repository_name
   branch              = "main"
   file                = ".github/workflows/sonarcloud-workflow-build.yml"
-  content             = file("modules/sonarcloud/sonarcloud-workflow-build.txt")
+  content             = file("modules/sonarcloud/sonarcloud-workflow-build.yml")
   overwrite_on_create = true
 }
 
