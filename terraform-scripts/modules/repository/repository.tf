@@ -1,8 +1,9 @@
 resource "github_repository" "repository" {
-  name         = var.repository_name
-  has_issues   = true
-  has_projects = true
-  auto_init    = true
+  name             = var.repository_name
+  has_issues       = true
+  has_projects     = true
+  auto_init        = true
+  license_template = "apache-2.0"
 }
 
 resource "github_branch_default" "main" {
