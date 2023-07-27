@@ -22,8 +22,34 @@ module "team" {
   repository_id    = module.repository.repository_id
 }
 
-module "quarkus" {
+# APM-SVC
+module "quarkus-onecx-apm-svc" {
   source = "../../modules/quarkus"
+  repository_name = module.repository-onecx-apm-svc.repository_name
+}
 
-  repository_name = module.repository.repository_name
+module "repository-onecx-apm-svc" {
+  source = "../../modules/repository"
+
+  repository_name        = "onecx-apm-svc"
+  repository_description = "Onecx APM permisions service"
+  team_permission        = "maintain"
+  team_id                = module.team.team_id
+  application_ids        = module.global.applications_sonarcloud_id
+}
+
+# APM-UI
+module "angular-onecx-apm-ui" {
+  source = "../../modules/angular"
+  repository_name = module.repository-onecx-apm-ui.repository_name
+}
+
+module "repository-onecx-apm-ui" {
+  source = "../../modules/repository"
+
+  repository_name        = "onecx-apm-ui"
+  repository_description = "Onecx APM permisions UI"
+  team_permission        = "maintain"
+  team_id                = module.team.team_id
+  application_ids        = module.global.applications_sonarcloud_id
 }
