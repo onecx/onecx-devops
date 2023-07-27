@@ -1,3 +1,3 @@
 variable "repository_name" {}
 
-variable "organisation" {}
+variable "check_app_id" {}

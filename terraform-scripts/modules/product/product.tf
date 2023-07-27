@@ -1,45 +1,32 @@
-
-# repository
-resource "github_repository" "repository" {
-  name             = var.repository_name
-  description      = var.repository_description
-  has_issues       = true
-  has_projects     = true
-  auto_init        = true
-  license_template = "apache-2.0"
+# GITHUB REPOSITORY
+module "repository" {
+  source = "../../modules/repository"
+  repository_name        = var.repository_name
+  repository_description = var.repository_description
+  team_permission        = var.team_permission
+  team_id                = var.team_id
+  application_ids        = var.application_ids
+  branch                 = var.branch
 }
 
-resource "github_branch_default" "main" {
-  repository = github_repository.repository.name
-  branch     = "main"
-}
-
+# GITHUB REPOSITORY RULES
 resource "github_branch_protection_v3" "main" {
-  repository = github_repository.repository.name
-  branch     = "main"
+  for_each = toset( [
+    "main",
+    "fix/*.*.x"
+  ] )
+  repository = var.repository_name
+  branch     = each.key
 }
 
-resource "github_branch_protection" "fix" {
-  repository_id = github_repository.repository.id
-  pattern       = "fix/*.*.x"
-}
-
-resource "github_team_repository" "team" {
-  repository = github_repository.repository.name
-  team_id    = var.team_id
-  permission = var.team_permission
-}
-
-# .github/workflows
-resource "github_repository_file" "documentation" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/documentation.yml"
-  content             = file("modules/product/.github/workflows/documentation.yml")
+# RESOURCES
+resource "github_repository_file" "resources" {
+  for_each = toset( [
+    ".github/workflows/documentation.yml"
+  ] )
+  repository          = var.repository_name
+  branch              = var.branch
+  file                = each.key
+  content             = file(format("modules/product/%s", each.key))
   overwrite_on_create = true
 }
-
-
-
-
-

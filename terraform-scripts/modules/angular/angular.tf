@@ -1,79 +1,39 @@
 
-# .github
-resource "github_repository_file" "changelog" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/changelog.yaml"
-  content             = file("modules/angular/.github/changelog.yaml")
-  overwrite_on_create = true
-}
-resource "github_repository_file" "dependabot" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/dependabot.yml"
-  content             = file("modules/angular/.github/dependabot.yml")
-  overwrite_on_create = true
+# GITHUB REPOSITORY
+module "repository" {
+  source = "../../modules/repository"
+  repository_name        = var.repository_name
+  repository_description = var.repository_description
+  team_permission        = var.team_permission
+  team_id                = var.team_id
+  application_ids        = var.application_ids
+  branch                 = var.branch
 }
 
-# .github/workflows
-resource "github_repository_file" "build_branch" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/build-branch.yml"
-  content             = file("modules/angular/.github/workflows/build-branch.yml")
-  overwrite_on_create = true
-}
-resource "github_repository_file" "build_pr" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/build-pr.yml"
-  content             = file("modules/angular/.github/workflows/build-pr.yml")
-  overwrite_on_create = true
-}
-resource "github_repository_file" "build_release" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/build-release.yml"
-  content             = file("modules/angular/.github/workflows/build-release.yml")
-  overwrite_on_create = true
-}
-resource "github_repository_file" "build" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/build.yml"
-  content             = file("modules/angular/.github/workflows/build.yml")
-  overwrite_on_create = true
-}
-resource "github_repository_file" "create_fix_branch" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/create-fix-branch.ym"
-  content             = file("modules/angular/.github/workflows/create-fix-branch.yml")
-  overwrite_on_create = true
-}
-resource "github_repository_file" "create_release" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/create-release.yml"
-  content             = file("modules/angular/.github/workflows/create-release.yml")
-  overwrite_on_create = true
-}
-resource "github_repository_file" "documentation" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/documentation.yml"
-  content             = file("modules/angular/.github/workflows/documentation.yml")
-  overwrite_on_create = true
-}
-resource "github_repository_file" "sonar_pr" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/sonar-pr.yml"
-  content             = file("modules/angular/.github/workflows/sonar-pr.yml")
-  overwrite_on_create = true
+# GITHUB REPOSITORY RULES
+module "repository-rules" {
+  source = "../../modules/branch/rules"
+  check_app_id = var.check_app_id
+  repository_name = var.repository_name
 }
 
-
-
-
-
+# RESOURCES
+resource "github_repository_file" "resources" {
+  for_each = toset( [
+    ".github/changelog.yaml",
+    ".github/dependabot.yaml",
+    ".github/workflows/build-branch.yml",
+    ".github/workflows/build-pr.yml",
+    ".github/workflows/build-release.yml",
+    ".github/workflows/build.yml",
+    ".github/workflows/create-fix-branch.yml",
+    ".github/workflows/create-release.yml",
+    ".github/workflows/documentation.yml",
+    ".github/workflows/sonar-pr.yml"
+  ] )
+  repository          = var.repository_name
+  branch              = var.branch
+  file                = each.key
+  content             = file(format("modules/angular/%s", each.key))
+  overwrite_on_create = true
+}
