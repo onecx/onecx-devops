@@ -2,14 +2,23 @@ module "global" {
   source = "../../modules/global_constants"
 }
 
+module "repository" {
+  source = "../../modules/product"
+
+  repository_name        = "onecx-apm"
+  repository_description = "Onecx APM permisions"
+  team_permission        = "maintain"
+  team_id                = module.team.team_id
+}
+
 module "team" {
   source = "../../modules/team"
 
   team_name        = "onecx-core"
   team_description = "onecx-core"
   team_file_path   = "products/onecx-core/team.csv"
-  repository_name  = module.repository-onecx-apm-svc.repository_name
-  repository_id    = module.repository-onecx-apm-svc.repository_id
+  repository_name  = module.repository.repository_name
+  repository_id    = module.repository.repository_id
 }
 
 # APM-SVC
