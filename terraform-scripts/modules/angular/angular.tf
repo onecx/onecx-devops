@@ -18,7 +18,7 @@ module "repository-rules" {
 }
 
 # GITHUB REPOSITORY APPS
-module "repository-rules" {
+module "repository-apps" {
   source = "../github/apps"
   application_ids = var.application_ids
   repository_name = var.repository_name
