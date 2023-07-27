@@ -7,6 +7,14 @@ module "onecx-core" {
 }
 
 # APM-SVC
+module "onecx-portal" {
+  source = "../../modules/product"
+  repository_name        = "onecx-portal"
+  repository_description = "Onecx Portal"
+  team_id                = module.onecx-core.team_id
+}
+
+# APM-SVC
 module "onecx-apm-svc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-apm-svc"
