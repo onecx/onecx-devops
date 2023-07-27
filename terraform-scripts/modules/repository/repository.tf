@@ -22,16 +22,6 @@ resource "github_branch_protection_v3" "main" {
   }
 }
 
-resource "github_branch_protection" "main-rule" {
-  repository_id = github_repository.repository.id
-  pattern       = "main"
-
-  required_status_checks {
-    strict   = true
-    contexts = ["SonarCloud Code Analysis"]
-  }
-}
-
 resource "github_branch_protection" "fix" {
   repository_id = github_repository.repository.id
   pattern       = "fix/*.*.x"

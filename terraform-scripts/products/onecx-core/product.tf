@@ -2,21 +2,6 @@ module "global" {
   source = "../../modules/global_constants"
 }
 
-module "repository" {
-  source = "../../modules/repository"
-
-  repository_name        = "onecx-apm"
-  repository_description = "Onecx APM permisions"
-  team_permission        = "maintain"
-  team_id                = module.team.team_id
-  application_ids        = module.global.applications_sonarcloud_id
-}
-
-module "product-onecx-apm" {
-  source = "../../modules/product"
-  repository_name = module.repository.repository_name
-}
-
 module "team" {
   source = "../../modules/team"
 
