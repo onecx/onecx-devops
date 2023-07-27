@@ -15,10 +15,15 @@ resource "github_branch_default" "main" {
 resource "github_branch_protection_v3" "main" {
   repository = github_repository.repository.name
   branch     = "main"
+}
+
+resource "github_branch_protection" "main-rule" {
+  repository_id = github_repository.repository.id
+  pattern       = "main"
 
   required_status_checks {
-    strict = true
-    checks = ["SonarCloud Code Analysis"]
+    strict   = true
+    contexts = ["SonarCloud Code Analysis"]
   }
 }
 
