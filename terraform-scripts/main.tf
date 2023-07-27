@@ -19,3 +19,7 @@ provider "sonarcloud" {
 module "products" {
   source = "./products/onecx-k8s"
 }
+
+module "product-onecx-core" {
+  source = "./products/onecx-core"
+}
