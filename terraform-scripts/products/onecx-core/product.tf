@@ -12,7 +12,7 @@ module "repository" {
   application_ids        = module.global.applications_sonarcloud_id
 }
 
-module "product-onecx-apm-svc" {
+module "product-onecx-apm" {
   source = "../../modules/product"
   repository_name = module.repository.repository_name
 }
