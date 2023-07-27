@@ -6,7 +6,6 @@ module "repository" {
   repository_description = var.repository_description
   team_permission        = var.team_permission
   team_id                = var.team_id
-  application_ids        = var.application_ids
   branch                 = var.branch
 }
 
