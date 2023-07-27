@@ -21,7 +21,7 @@ module "repository-rules" {
 resource "github_repository_file" "resources" {
   for_each = toset( [
     ".github/changelog.yaml",
-    ".github/dependabot.yaml",
+    ".github/dependabot.yml",
     ".github/workflows/build-branch.yml",
     ".github/workflows/build-pr.yml",
     ".github/workflows/build-release.yml",
