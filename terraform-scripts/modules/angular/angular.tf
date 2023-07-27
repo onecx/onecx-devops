@@ -1,7 +1,7 @@
 
 # GITHUB REPOSITORY
 module "repository" {
-  source = "../../modules/repository"
+  source = "../github/repository"
   repository_name        = var.repository_name
   repository_description = var.repository_description
   team_permission        = var.team_permission
@@ -12,14 +12,25 @@ module "repository" {
 
 # GITHUB REPOSITORY RULES
 module "repository-rules" {
-  source = "../../modules/branch/rules"
+  source = "../github/branch/rules"
   check_app_id = var.check_app_id
   repository_name = var.repository_name
 }
 
-# RESOURCES
-resource "github_repository_file" "resources" {
-  for_each = toset( [
+# GITHUB REPOSITORY APPS
+module "repository-rules" {
+  source = "../github/apps"
+  application_ids = var.application_ids
+  repository_name = var.repository_name
+}
+
+# GITHUB REPOSITORY FILES
+module "repository-files" {
+  source = "../github/files"
+  branch = var.branch
+  repository_name = var.repository_name
+  module = "angular"
+  files = [
     ".github/changelog.yaml",
     ".github/dependabot.yml",
     ".github/workflows/build-branch.yml",
@@ -30,10 +41,6 @@ resource "github_repository_file" "resources" {
     ".github/workflows/create-release.yml",
     ".github/workflows/documentation.yml",
     ".github/workflows/sonar-pr.yml"
-  ] )
-  repository          = var.repository_name
-  branch              = var.branch
-  file                = each.key
-  content             = file(format("modules/angular/%s", each.key))
-  overwrite_on_create = true
+  ]
 }
+

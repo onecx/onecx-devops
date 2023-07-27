@@ -8,8 +8,6 @@ variable "team_permission" {
   default = "maintain"
 }
 
-variable "application_ids" {}
-
 variable "branch" {
   default = "main"
 }

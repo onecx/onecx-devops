@@ -1,11 +1,10 @@
 # GITHUB REPOSITORY
 module "repository" {
-  source = "../../modules/repository"
+  source = "../github/repository"
   repository_name        = var.repository_name
   repository_description = var.repository_description
   team_permission        = var.team_permission
   team_id                = var.team_id
-  application_ids        = var.application_ids
   branch                 = var.branch
 }
 
@@ -19,14 +18,12 @@ resource "github_branch_protection_v3" "main" {
   branch     = each.key
 }
 
-# RESOURCES
-resource "github_repository_file" "resources" {
-  for_each = toset( [
-    ".github/workflows/documentation.yml"
-  ] )
-  repository          = var.repository_name
-  branch              = var.branch
-  file                = each.key
-  content             = file(format("modules/product/%s", each.key))
-  overwrite_on_create = true
+# GITHUB REPOSITORY FILES
+module "repository-files" {
+  source = "../github/files"
+  branch = var.branch
+  repository_name = var.repository_name
+  module = "product"
+  files = [".github/workflows/documentation.yml"]
 }
+
