@@ -8,8 +8,6 @@ module "team" {
   team_name        = "onecx-core"
   team_description = "onecx-core"
   team_file_path   = "products/onecx-core/team.csv"
-  repository_name  = module.repository.repository_name
-  repository_id    = module.repository.repository_id
 }
 
 # APM-SVC
