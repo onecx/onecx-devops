@@ -1,4 +1,8 @@
-variable "organisation" {}
+variable "organisation" {
+  description = "sonar-cloud organization"
+  type = string
+  default = null
+}
 
 variable "repository_name" {
   description = "name of the repository"
