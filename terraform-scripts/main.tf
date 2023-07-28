@@ -12,14 +12,10 @@ provider "github" {
   owner = "onecx"
 }
 
-provider "sonarcloud" {
-  organization = "onecx"
-}
-
-module "products" {
+module "onecx-k8s" {
   source = "./products/onecx-k8s"
 }
 
-module "product-onecx-core" {
+module "onecx-core" {
   source = "./products/onecx-core"
 }

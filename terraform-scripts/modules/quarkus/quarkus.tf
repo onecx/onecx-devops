@@ -1,77 +1,52 @@
-
-# .github
-resource "github_repository_file" "changelog" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/changelog.yaml"
-  content             = file("modules/quarkus/.github/changelog.yaml")
-  overwrite_on_create = true
-}
-resource "github_repository_file" "dependabot" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/dependabot.yml"
-  content             = file("modules/quarkus/.github/dependabot.yml")
-  overwrite_on_create = true
+module "global" {
+  source = "../../modules/global_constants"
 }
 
-# .github/workflows
-resource "github_repository_file" "build_branch" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/build-branch.yml"
-  content             = file("modules/quarkus/.github/workflows/build-branch.yml")
-  overwrite_on_create = true
+# GITHUB REPOSITORY
+module "repository" {
+  source = "../github/repository"
+  repository_name        = var.repository_name
+  repository_description = var.repository_description
+  team_permission        = var.team_permission
+  team_id                = var.team_id
+  branch                 = var.branch
 }
-resource "github_repository_file" "build_pr" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/build-pr.yml"
-  content             = file("modules/quarkus/.github/workflows/build-pr.yml")
-  overwrite_on_create = true
+
+# GITHUB REPOSITORY RULES
+module "repository-rules" {
+  source = "../github/branch/rules"
+  sonar_app_id = module.global.sonarcloud_id
+  repository_name = var.repository_name
 }
-resource "github_repository_file" "build_release" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/build-release.yml"
-  content             = file("modules/quarkus/.github/workflows/build-release.yml")
-  overwrite_on_create = true
+
+# GITHUB REPOSITORY APPS
+module "repository-apps" {
+  source = "../github/apps"
+  application_ids = [module.global.sonarcloud_id]
+  repository_name = var.repository_name
 }
-resource "github_repository_file" "build" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/build.yml"
-  content             = file("modules/quarkus/.github/workflows/build.yml")
-  overwrite_on_create = true
+
+# GITHUB REPOSITORY FILES
+module "repository-files" {
+  source = "../github/files"
+  branch = var.branch
+  repository_name = var.repository_name
+  module = "quarkus"
+  files = [
+    ".github/changelog.yaml",
+    ".github/dependabot.yml",
+    ".github/workflows/build-branch.yml",
+    ".github/workflows/build-pr.yml",
+    ".github/workflows/build-release.yml",
+    ".github/workflows/build.yml",
+    ".github/workflows/create-fix-branch.yml",
+    ".github/workflows/create-release.yml",
+    ".github/workflows/documentation.yml",
+    ".github/workflows/sonar-pr.yml"
+  ]
 }
-resource "github_repository_file" "quarkus_create_fix_branch" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/create-fix-branch.ym"
-  content             = file("modules/quarkus/.github/workflows/create-fix-branch.yml")
-  overwrite_on_create = true
-}
-resource "github_repository_file" "quarkus_create_release" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/create-release.yml"
-  content             = file("modules/quarkus/.github/workflows/create-release.yml")
-  overwrite_on_create = true
-}
-resource "github_repository_file" "quarkus_documentation" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/documentation.yml"
-  content             = file("modules/quarkus/.github/workflows/documentation.yml")
-  overwrite_on_create = true
-}
-resource "github_repository_file" "quarkus_sonar_pr" {
-  repository          =  var.repository_name
-  branch              = "main"
-  file                = ".github/workflows/sonar-pr.yml"
-  content             = file("modules/quarkus/.github/workflows/sonar-pr.yml")
-  overwrite_on_create = true
-}
+
+
 
 
 
