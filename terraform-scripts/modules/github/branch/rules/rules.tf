@@ -8,7 +8,7 @@ resource "github_branch_protection_v3" "main" {
   required_status_checks {
     strict   = true
     checks = [
-      format("ci/check:%s", var.sonar_app_id)
+      format("%s:%s", var.sonar_context, var.sonar_app_id)
     ]
   }
 }

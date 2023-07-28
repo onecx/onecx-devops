@@ -10,6 +10,12 @@ variable "sonar_app_id" {
   default = null
 }
 
+variable "sonar_context" {
+  description = "sonar check context"
+  type = string
+  default = "SonarCloud Code Analysis"
+}
+
 variable "rules" {
   description = "List of branch rules to apply"
   type = list(string)
