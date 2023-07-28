@@ -1,6 +1,3 @@
-module "global" {
-  source = "../../modules/global_constants"
-}
 
 # TEAM ONECX-CORE
 module "onecx-core" {
