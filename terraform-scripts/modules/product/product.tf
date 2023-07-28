@@ -13,6 +13,12 @@ resource "github_branch_protection" "patterns" {
   for_each = toset( var.patterns )
   repository_id = var.repository_name
   pattern = each.key
+
+  require_conversation_resolution = true
+
+  required_pull_request_reviews {
+    required_approving_review_count = 1
+  }
 }
 
 # GITHUB REPOSITORY FILES

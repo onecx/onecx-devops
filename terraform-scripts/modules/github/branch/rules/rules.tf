@@ -9,4 +9,10 @@ resource "github_branch_protection" "patterns" {
       var.sonar_context
     ]
   }
+
+  require_conversation_resolution = true
+
+  required_pull_request_reviews {
+    required_approving_review_count = 1
+  }
 }
