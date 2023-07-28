@@ -37,5 +37,4 @@ To obtain your GitHub token go to:
 * Profile &rarr; Developer Settings &rarr; [Personal access tokens (classic)](https://github.com/settings/tokens)
 * Use `export GITHUB_TOKEN=your_token`
 
-
 Organization &rarr; Settings &rarr; Security &rarr; Secrets and variables
