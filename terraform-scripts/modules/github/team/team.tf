@@ -11,7 +11,7 @@ resource "github_team_membership" "team_membership" {
 
   team_id = github_team.team.id
   for_each = {
-    for member in csvdecode(file(var.team_file_path)) :
+    for member in csvdecode(file(var.team_members_file_path)) :
     member.username => member
   }
 

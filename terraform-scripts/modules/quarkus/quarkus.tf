@@ -1,3 +1,6 @@
+module "global" {
+  source = "../../modules/global_constants"
+}
 
 # GITHUB REPOSITORY
 module "repository" {
@@ -12,14 +15,14 @@ module "repository" {
 # GITHUB REPOSITORY RULES
 module "repository-rules" {
   source = "../github/branch/rules"
-  check_app_id = var.check_app_id
+  sonar_app_id = module.global.sonarcloud_id
   repository_name = var.repository_name
 }
 
 # GITHUB REPOSITORY APPS
 module "repository-apps" {
   source = "../github/apps"
-  application_ids = var.application_ids
+  application_ids = [module.global.sonarcloud_id]
   repository_name = var.repository_name
 }
 
