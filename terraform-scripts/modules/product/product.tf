@@ -8,11 +8,11 @@ module "repository" {
   branch                 = var.branch
 }
 
-# GITHUB REPOSITORY RULES
-resource "github_branch_protection_v3" "main" {
-  for_each = toset( var.rules )
-  repository = module.repository.repository_name
-  branch     = each.key
+# GITHUB REPOSITORY BRANCHES/PATTERNS
+resource "github_branch_protection" "patterns" {
+  for_each = toset( var.patterns )
+  repository_id = var.repository_name
+  pattern = each.key
 }
 
 # GITHUB REPOSITORY FILES

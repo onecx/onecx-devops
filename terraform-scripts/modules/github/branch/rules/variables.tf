@@ -16,8 +16,8 @@ variable "sonar_context" {
   default = "SonarCloud Code Analysis"
 }
 
-variable "rules" {
-  description = "List of branch rules to apply"
+variable "patterns" {
+  description = "List of branch pattern to apply"
   type = list(string)
   default = [
     "main",
