@@ -33,16 +33,18 @@ jobs:
     - name: Setup Terraform
       uses: hashicorp/setup-terraform@v2
       with:
-        version: 1.5.1
+        version: 1.5.4
         cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
     # Checks that all Terraform configuration files adhere to a canonical format
     - name: Terraform Format
+      id: fmt
       run: terraform fmt -check
       continue-on-error: true
 
     # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc
     - name: Terraform Init
+      id: init
       # if: steps.check_files.outputs.files_exists != 'true'
       run: terraform init
 
@@ -52,6 +54,7 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
+      id: plan
       run: terraform plan -input=false
 
     - uses: actions/github-script@v6
