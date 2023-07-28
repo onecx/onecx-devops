@@ -47,3 +47,11 @@ module "repository-files" {
   ]
 }
 
+# SONARCLOUD
+module "sonarcloud" {
+  source = "../sonarcloud"
+  repository_name = module.repository.repository_name
+  branch = var.branch
+  organisation = module.global.organisation
+}
+
