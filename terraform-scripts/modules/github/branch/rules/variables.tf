@@ -20,7 +20,7 @@ variable "patterns" {
   description = "List of branch pattern to apply"
   type = list(string)
   default = [
-    main,
+    "main",
     "fix/*.*.x"
   ]
 }
