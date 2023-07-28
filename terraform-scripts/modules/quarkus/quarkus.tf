@@ -16,21 +16,21 @@ module "repository" {
 module "repository-rules" {
   source = "../github/branch/rules"
   sonar_app_id = module.global.sonarcloud_id
-  repository_name = var.repository_name
+  repository_name = module.repository.repository_name
 }
 
-# GITHUB REPOSITORY APPS
-module "repository-apps" {
-  source = "../github/apps"
-  application_ids = [module.global.sonarcloud_id]
-  repository_name = var.repository_name
-}
+## GITHUB REPOSITORY APPS
+#module "repository-apps" {
+#  source = "../github/apps"
+#  application_ids = [module.global.sonarcloud_id]
+#  repository_name = module.repository.repository_name
+#}
 
 # GITHUB REPOSITORY FILES
 module "repository-files" {
   source = "../github/files"
   branch = var.branch
-  repository_name = var.repository_name
+  repository_name = module.repository.repository_name
   module = "quarkus"
   files = [
     ".github/changelog.yaml",
