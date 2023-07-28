@@ -28,11 +28,18 @@ variable "branch" {
   default = "main"
 }
 
-variable "rules" {
-  description = "List of branch rules to apply"
+variable "branches" {
+  description = "List of branch branches to apply"
   type = list(string)
   default = [
-    "main",
+    "main"
+  ]
+}
+
+variable "patterns" {
+  description = "List of branch pattern to apply"
+  type = list(string)
+  default = [
     "fix/*.*.x"
   ]
 }
