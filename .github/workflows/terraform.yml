@@ -55,7 +55,16 @@ jobs:
     # Generates an execution plan for Terraform
     - name: Terraform Plan
       id: plan
-      run: terraform plan -input=false
+      run: terraform plan -no-color -input=false
+      continue-on-error: true
+
+    - name: Tidy Plan output
+      run : |
+        echo "${{ steps.plan.outputs.stdout }}" | grep -E '^\s*[~+-]' > plan-out.txt
+        cat plan-out.txt
+        echo 'PLAN_OUTPUT<<EOF' >> $GITHUB_ENV
+        echo "$(cat plan-out.txt)" >> $GITHUB_ENV
+        echo 'EOF' >> $GITHUB_ENV
 
     - uses: actions/github-script@v6
       if: github.event_name == 'pull_request'
@@ -80,7 +89,7 @@ jobs:
           <details><summary>Show Plan</summary>
           
           \`\`\`\n
-          ${process.env.PLAN}
+          ${env.PLAN_OUTPUT}
           \`\`\`
           
           </details>
