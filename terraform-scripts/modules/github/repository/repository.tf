@@ -5,6 +5,10 @@ resource "github_repository" "repository" {
   has_projects     = true
   auto_init        = true
   license_template = var.license_template
+  allow_merge_commit = false
+  allow_rebase_merge = false
+  allow_squash_merge = true
+  delete_branch_on_merge = true
 }
 
 resource "github_branch_default" "main" {
