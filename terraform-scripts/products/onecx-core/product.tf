@@ -23,10 +23,10 @@ module "onecx-apm-svc" {
   team_id                = module.onecx-core.team_id
 }
 
-# APM-UI
-module "repository-onecx-apm-ui" {
-  source = "../../modules/angular"
-  repository_name        = "onecx-apm-ui"
-  repository_description = "Onecx APM permisions UI"
+# ONECX-PORTAL-IAM-KC-SVC
+module "onecx-portal-iam-kc-svc" {
+  source = "../../modules/quarkus"
+  repository_name        = "onecx-portal-iam-kc-svc"
+  repository_description = "Onecx portal IAM keycloak service"
   team_id                = module.onecx-core.team_id
 }
