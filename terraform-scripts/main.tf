@@ -19,3 +19,7 @@ module "onecx-k8s" {
 module "onecx-core" {
   source = "./products/onecx-core"
 }
+
+module "onecx-parameter" {
+  source = "./products/onecx-parameter"
+}
