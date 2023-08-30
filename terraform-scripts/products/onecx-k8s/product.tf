@@ -8,7 +8,7 @@ module "onecx-k8s" {
 }
 
 # ONECX-K8S
-module "onecx-k8s" {
+module "onecx-k8s-product" {
   source = "../../modules/product"
   repository_name        = "onecx-k8s"
   repository_description = "OneCx K8S Management"
