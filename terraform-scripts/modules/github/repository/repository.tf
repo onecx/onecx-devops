@@ -1,7 +1,9 @@
 resource "github_repository" "repository" {
   name             = var.repository_name
   description      = var.repository_description
-  has_issues       = true
+  has_issues       = var.project_repo
+  has_discussions  = var.project_repo
+  has_wiki         = false
   has_projects     = true
   auto_init        = true
   license_template = var.license_template

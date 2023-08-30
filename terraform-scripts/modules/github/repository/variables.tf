@@ -33,3 +33,9 @@ variable "license_template" {
   type = string
   default = "apache-2.0"
 }
+
+variable "project_repo" {
+  description = "Project repository. Not only source code repository"
+  type = bool
+  default = false
+}
