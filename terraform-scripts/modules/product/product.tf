@@ -6,6 +6,7 @@ module "repository" {
   team_permission        = var.team_permission
   team_id                = var.team_id
   branch                 = var.branch
+  project_repo           = true
 }
 
 # GITHUB REPOSITORY BRANCHES/PATTERNS
