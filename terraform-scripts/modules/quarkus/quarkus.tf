@@ -19,33 +19,6 @@ module "repository-rules" {
   repository_name = module.repository.repository_name
 }
 
-## GITHUB REPOSITORY APPS
-#module "repository-apps" {
-#  source = "../github/apps"
-#  application_ids = [module.global.sonarcloud_id]
-#  repository_name = module.repository.repository_name
-#}
-
-# GITHUB REPOSITORY FILES
-module "repository-files" {
-  source = "../github/files"
-  branch = var.branch
-  repository_name = module.repository.repository_name
-  module = "quarkus"
-  files = [
-    ".github/changelog.yaml",
-    ".github/dependabot.yml",
-    ".github/workflows/build-branch.yml",
-    ".github/workflows/build-pr.yml",
-    ".github/workflows/build-release.yml",
-    ".github/workflows/build.yml",
-    ".github/workflows/create-fix-branch.yml",
-    ".github/workflows/create-release.yml",
-    ".github/workflows/documentation.yml",
-    ".github/workflows/sonar-pr.yml"
-  ]
-}
-
 # SONARCLOUD
 module "sonarcloud" {
   source = "../sonarcloud"
