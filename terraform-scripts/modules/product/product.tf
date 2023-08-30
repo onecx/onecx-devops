@@ -26,15 +26,6 @@ resource "github_branch_protection" "patterns" {
   }
 }
 
-# GITHUB REPOSITORY FILES
-module "repository-files" {
-  source = "../github/files"
-  branch = var.branch
-  repository_name = module.repository.repository_name
-  module = "product"
-  files = [".github/workflows/documentation.yml"]
-}
-
 # GITHUB REPOSITORY LABELS
 module "labels" {
   source = "../github/labels"
