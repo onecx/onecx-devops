@@ -13,6 +13,7 @@ module "onecx-parameter" {
   repository_name        = "onecx-parameter"
   repository_description = "OneCx Parameter Management"
   team_id                = module.onecx-parameter-team.team_id
+  team_name              = module.onecx-parameter-team.team_name
   labels = {
     onecx-parameter-svc = "0ea5e9"
     onecx-parameter-bff = "14b8a6"

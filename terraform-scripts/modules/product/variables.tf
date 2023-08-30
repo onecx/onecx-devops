@@ -16,6 +16,12 @@ variable "team_id" {
   default = null
 }
 
+variable "team_name" {
+  description = "Name of the github team"
+  type = string
+  default = null
+}
+
 variable "team_permission" {
   description = "The permissions of team members regarding the repository. Values: pull, triage, push, maintain, admin"
   type = string
@@ -37,10 +43,16 @@ variable "patterns" {
   ]
 }
 
-variable "label_color" {
+variable "label_color_product" {
   description = "Color of the product label"
   type = string
   default = "f97316"
+}
+
+variable "label_color_team" {
+  description = "Color of the team label"
+  type = string
+  default = "84cc16"
 }
 
 variable "labels" {

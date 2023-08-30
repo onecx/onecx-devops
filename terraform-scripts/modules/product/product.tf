@@ -38,5 +38,5 @@ module "repository-files" {
 module "labels" {
   source = "../github/labels"
   repository_name = module.repository.repository_name
-  labels = merge({  (module.repository.repository_name) = var.label_color }, var.labels)
+  labels = merge({  (var.team_name) = var.label_color_team, (module.repository.repository_name) = var.label_color_product }, var.labels)
 }
