@@ -13,6 +13,11 @@ module "onecx-portal" {
   repository_name        = "onecx-portal"
   repository_description = "Onecx Portal"
   team_id                = module.onecx-core.team_id
+  team_name              = module.onecx-core.team_name
+  labels = {
+    onecx-apm-svc = "0ea5e9"
+    onecx-portal-iam-kc-svc = "14b8a6"
+  }
 }
 
 # APM-SVC
