@@ -36,3 +36,15 @@ variable "patterns" {
     "fix/*.*.x"
   ]
 }
+
+variable "label_color" {
+  description = "Color of the product label"
+  type = string
+  default = "f97316"
+}
+
+variable "labels" {
+  description = "The map of labels name and color"
+  type = map(string)
+  default = {}
+}

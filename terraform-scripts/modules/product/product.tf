@@ -34,3 +34,9 @@ module "repository-files" {
   files = [".github/workflows/documentation.yml"]
 }
 
+# GITHUB REPOSITORY LABELS
+module "labels" {
+  source = "../github/labels"
+  repository_name = module.repository.repository_name
+  labels = merge({ module.repository.repository_name = var.label_color }, var.labels)
+}
