@@ -7,6 +7,18 @@ module "onecx-k8s" {
   team_members_file_path   = "products/onecx-k8s/team.csv"
 }
 
+# ONECX-K8S
+module "onecx-k8s" {
+  source = "../../modules/product"
+  repository_name        = "onecx-k8s"
+  repository_description = "OneCx K8S Management"
+  team_id                = module.onecx-k8s.team_id
+  team_name              = module.onecx-k8s.team_name
+  labels = {
+    onecx-db-postgresql-operator = "0ea5e9"
+  }
+}
+
 # POSTGRESQL OPERATOR
 module "onecx-db-postgresql-operator" {
   source = "../../modules/quarkus"
