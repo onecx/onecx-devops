@@ -23,3 +23,7 @@ module "onecx-core" {
 module "onecx-parameter" {
   source = "./products/onecx-parameter"
 }
+
+module "onecx-tenant" {
+  source = "./products/onecx-tenant"
+}
