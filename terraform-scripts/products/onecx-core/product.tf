@@ -20,14 +20,6 @@ module "onecx-portal" {
   }
 }
 
-# APM-SVC
-module "onecx-apm-svc" {
-  source = "../../modules/quarkus"
-  repository_name        = "onecx-apm-svc"
-  repository_description = "Onecx APM permisions service"
-  team_id                = module.onecx-core.team_id
-}
-
 # ONECX-PORTAL-IAM-KC-SVC
 module "onecx-portal-iam-kc-svc" {
   source = "../../modules/quarkus"
