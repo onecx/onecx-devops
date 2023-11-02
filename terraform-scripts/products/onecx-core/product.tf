@@ -15,8 +15,9 @@ module "onecx-portal" {
   team_id                = module.onecx-core.team_id
   team_name              = module.onecx-core.team_name
   labels = {
-    onecx-apm-svc = "0ea5e9"
     onecx-portal-iam-kc-svc = "14b8a6"
+    onecx-portal-svc = "0ea5e9"
+    onecx-portal-bff = "14b8a6"
   }
 }
 
@@ -25,5 +26,21 @@ module "onecx-portal-iam-kc-svc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-portal-iam-kc-svc"
   repository_description = "Onecx portal IAM keycloak service"
+  team_id                = module.onecx-core.team_id
+}
+
+# ONECX-PORTAL-SVC
+module "onecx-portal-svc" {
+  source = "../../modules/quarkus"
+  repository_name        = "onecx-portal-svc"
+  repository_description = "Onecx portal service"
+  team_id                = module.onecx-core.team_id
+}
+
+# ONECX-PORTAL-SVC
+module "onecx-portal-bff" {
+  source = "../../modules/quarkus"
+  repository_name        = "onecx-portal-bff"
+  repository_description = "Onecx portal bff service"
   team_id                = module.onecx-core.team_id
 }
