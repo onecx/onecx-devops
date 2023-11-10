@@ -35,3 +35,7 @@ module "onecx-apm" {
 module "onecx-announcement" {
   source = "./products/onecx-announcement"
 }
+
+module "onecx-theme" {
+  source = "./products/onecx-theme"
+}
