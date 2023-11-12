@@ -39,3 +39,7 @@ module "onecx-announcement" {
 module "onecx-theme" {
   source = "./products/onecx-theme"
 }
+
+module "onecx-product-store" {
+  source = "./products/onecx-product-store"
+}
