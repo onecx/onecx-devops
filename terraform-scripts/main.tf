@@ -43,3 +43,7 @@ module "onecx-theme" {
 module "onecx-product-store" {
   source = "./products/onecx-product-store"
 }
+
+module "onecx-workspace" {
+  source = "./products/onecx-workspace"
+}
