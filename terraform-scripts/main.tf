@@ -41,5 +41,5 @@ module "onecx-theme" {
 }
 
 module "onecx-product-store" {
-  source = "./products/onecx-theme"
+  source = "./products/onecx-product-store"
 }
