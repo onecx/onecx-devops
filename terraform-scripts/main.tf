@@ -47,3 +47,7 @@ module "onecx-product-store" {
 module "onecx-workspace" {
   source = "./products/onecx-workspace"
 }
+
+module "onecx-help" {
+  source = "./products/onecx-help"
+}
