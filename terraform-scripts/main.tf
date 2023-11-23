@@ -51,3 +51,7 @@ module "onecx-workspace" {
 module "onecx-help" {
   source = "./products/onecx-help"
 }
+
+module "onecx-search-config" {
+  source = "./products/onecx-search-config"
+}
