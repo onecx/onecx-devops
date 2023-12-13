@@ -28,10 +28,6 @@ module "onecx-tenant" {
   source = "./products/onecx-tenant"
 }
 
-module "onecx-apm" {
-  source = "./products/onecx-apm"
-}
-
 module "onecx-announcement" {
   source = "./products/onecx-announcement"
 }
