@@ -55,3 +55,7 @@ module "onecx-help" {
 module "onecx-search-config" {
   source = "./products/onecx-search-config"
 }
+
+module "onecx-user-profile" {
+  source = "./products/onecx-user-profile"
+}
