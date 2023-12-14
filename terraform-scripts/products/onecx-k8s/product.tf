@@ -15,7 +15,7 @@ module "onecx-k8s-product" {
   team_id                = module.onecx-k8s.team_id
   team_name              = module.onecx-k8s.team_name
   labels = {
-    onecx-db-postgresql-operator = "0ea5e9"
+    onecx-k8s-db-postgresql-operator = "0ea5e9"
   }
 }
 
@@ -23,6 +23,13 @@ module "onecx-k8s-product" {
 module "onecx-db-postgresql-operator" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-db-postgresql-operator"
+  repository_description = "onecx postgresql schema operator"
+  team_id                = module.onecx-k8s.team_id
+}
+
+module "onecx-k8s-db-postgresql-operator" {
+  source = "../../modules/quarkus"
+  repository_name        = "onecx-k8s-db-postgresql-operator"
   repository_description = "onecx postgresql schema operator"
   team_id                = module.onecx-k8s.team_id
 }
