@@ -55,3 +55,7 @@ module "onecx-search-config" {
 module "onecx-user-profile" {
   source = "./products/onecx-user-profile"
 }
+
+module "onecx-permission" {
+  source = "./products/onecx-user-profile"
+}
