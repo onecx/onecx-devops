@@ -14,11 +14,6 @@ module "onecx-user-profile" {
   repository_description = "OneCx user-profile"
   team_id                = module.onecx-user-profile-team.team_id
   team_name              = module.onecx-user-profile-team.team_name
-  labels = {
-    onecx-user-profile-svc          = "0ea5e9"
-    onecx-user-profile-bff          = "14b8a6"
-    onecx-user-profile-ui           = "6366f1"
-  }
 }
 
 # ONECX-USER-PROFILE-SVC

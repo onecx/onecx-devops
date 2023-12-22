@@ -14,11 +14,6 @@ module "onecx-permission" {
   repository_description = "OneCx permission"
   team_id                = module.onecx-permission-team.team_id
   team_name              = module.onecx-permission-team.team_name
-  labels = {
-    onecx-permission-svc          = "0ea5e9"
-    onecx-permission-bff          = "14b8a6"
-    onecx-permission-ui           = "6366f1"
-  }
 }
 
 # ONECX-PERMISSION-SVC

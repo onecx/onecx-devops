@@ -14,9 +14,6 @@ module "onecx-search-config" {
   repository_description = "OneCx search config"
   team_id                = module.onecx-search-config-team.team_id
   team_name              = module.onecx-search-config-team.team_name
-  labels = {
-    onecx-search-config-svc = "0ea5e9"
-  }
 }
 
 # ONECX-SEARCH-CONFIG-SVC

@@ -14,11 +14,6 @@ module "onecx-help" {
   repository_description = "OneCx help"
   team_id                = module.onecx-help-team.team_id
   team_name              = module.onecx-help-team.team_name
-  labels = {
-    onecx-help-svc = "0ea5e9"
-    onecx-help-bff = "14b8a6"
-    onecx-help-ui  = "6366f1"
-  }
 }
 
 # ONECX-HELP-SVC
