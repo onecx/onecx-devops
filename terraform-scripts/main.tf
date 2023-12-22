@@ -57,5 +57,5 @@ module "onecx-user-profile" {
 }
 
 module "onecx-permission" {
-  source = "./products/onecx-user-profile"
+  source = "./products/onecx-permission"
 }
