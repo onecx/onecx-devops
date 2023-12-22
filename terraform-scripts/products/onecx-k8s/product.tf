@@ -14,9 +14,6 @@ module "onecx-k8s-product" {
   repository_description = "OneCx K8S Management"
   team_id                = module.onecx-k8s.team_id
   team_name              = module.onecx-k8s.team_name
-  labels = {
-    onecx-k8s-db-postgresql-operator = "0ea5e9"
-  }
 }
 
 # POSTGRESQL OPERATOR

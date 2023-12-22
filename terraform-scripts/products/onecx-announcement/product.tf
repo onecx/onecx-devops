@@ -14,11 +14,6 @@ module "onecx-announcement" {
   repository_description = "OneCx Announcement"
   team_id                = module.onecx-announcement-team.team_id
   team_name              = module.onecx-announcement-team.team_name
-  labels = {
-    onecx-announcement-svc = "0ea5e9"
-    onecx-announcement-bff = "14b8a6"
-    onecx-announcement-ui  = "6366f1"
-  }
 }
 
 # ONECX-ANNOUNCEMENT-SVC

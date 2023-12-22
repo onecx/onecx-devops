@@ -14,13 +14,6 @@ module "onecx-product-store" {
   repository_description = "OneCx product store"
   team_id                = module.onecx-product-store-team.team_id
   team_name              = module.onecx-product-store-team.team_name
-  labels = {
-    onecx-product-store-svc          = "0ea5e9"
-    onecx-product-store-bff          = "14b8a6"
-    onecx-product-store-ui           = "6366f1"
-    onecx-product-store-operator     = "0e8a16"
-    onecx-product-store-mfe-operator = "5319e7"
-  }
 }
 
 # ONECX-PRODUCT-STORE-SVC

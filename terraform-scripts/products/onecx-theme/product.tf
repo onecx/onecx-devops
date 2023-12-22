@@ -14,11 +14,6 @@ module "onecx-theme" {
   repository_description = "OneCx Theme"
   team_id                = module.onecx-theme-team.team_id
   team_name              = module.onecx-theme-team.team_name
-  labels = {
-    onecx-theme-svc = "0ea5e9"
-    onecx-theme-bff = "14b8a6"
-    onecx-theme-ui  = "6366f1"
-  }
 }
 
 # ONECX-THEME-SVC

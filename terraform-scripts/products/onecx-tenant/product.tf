@@ -14,11 +14,6 @@ module "onecx-tenant" {
   repository_description = "OneCx Tenant Management"
   team_id                = module.onecx-tenant-team.team_id
   team_name              = module.onecx-tenant-team.team_name
-  labels = {
-    onecx-tenant-svc = "0ea5e9"
-    onecx-tenant-bff = "14b8a6"
-    onecx-tenant-ui  = "6366f1"
-  }
 }
 
 # ONECX-TENANT-SVC

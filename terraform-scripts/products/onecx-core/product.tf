@@ -14,11 +14,6 @@ module "onecx-portal" {
   repository_description = "Onecx Portal"
   team_id                = module.onecx-core.team_id
   team_name              = module.onecx-core.team_name
-  labels = {
-    onecx-portal-iam-kc-svc = "14b8a6"
-    onecx-portal-svc = "0ea5e9"
-    onecx-portal-bff = "14b8a6"
-  }
 }
 
 # ONECX-PORTAL-IAM-KC-SVC
