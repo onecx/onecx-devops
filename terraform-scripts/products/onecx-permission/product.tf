@@ -39,3 +39,12 @@ module "onecx-permission-ui" {
   repository_description = "OneCx permission UI"
   team_id                = module.onecx-permission-team.team_id
 }
+
+# ONECX-PERMISSION-OPERATOR
+module "onecx-permission-operator" {
+  source = "../../modules/quarkus"
+  repository_name        = "onecx-permission-operator"
+  repository_description = "OneCx permission k8s operator"
+  team_id                = module.onecx-permission-team.team_id
+}
+
