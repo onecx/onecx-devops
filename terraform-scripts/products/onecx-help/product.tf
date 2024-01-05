@@ -20,7 +20,7 @@ module "onecx-help" {
 module "onecx-help-svc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-help-svc"
-  repository_description = "OneCx help Service"
+  repository_description = "OneCX Help Management SVC"
   team_id                = module.onecx-help-team.team_id
 }
 
@@ -28,7 +28,7 @@ module "onecx-help-svc" {
 module "onecx-help-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-help-bff"
-  repository_description = "OneCx help BFF"
+  repository_description = "OneCX Help Management BFF"
   team_id                = module.onecx-help-team.team_id
 }
 
@@ -36,6 +36,6 @@ module "onecx-help-bff" {
 module "onecx-help-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-help-ui"
-  repository_description = "OneCx help UI"
+  repository_description = "OneCX Help Management UI"
   team_id                = module.onecx-help-team.team_id
 }

@@ -11,7 +11,7 @@ module "onecx-iam-team" {
 module "onecx-iam" {
   source = "../../modules/product"
   repository_name        = "onecx-iam"
-  repository_description = "OneCx iam"
+  repository_description = "OneCX Identity Access Management Product"
   team_id                = module.onecx-iam-team.team_id
   team_name              = module.onecx-iam-team.team_name
 }
@@ -20,7 +20,7 @@ module "onecx-iam" {
 module "onecx-iam-kc-svc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-iam-kc-svc"
-  repository_description = "OneCx iam keycloak service"
+  repository_description = "OneCX Identity Access Management Keycloak Service"
   team_id                = module.onecx-iam-team.team_id
 }
 
@@ -36,7 +36,7 @@ module "onecx-iam-kc-client-operator" {
 module "onecx-iam-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-iam-bff"
-  repository_description = "OneCx iam BFF"
+  repository_description = "OneCX Identity Access Management BFF"
   team_id                = module.onecx-iam-team.team_id
 }
 
@@ -44,6 +44,6 @@ module "onecx-iam-bff" {
 module "onecx-iam-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-iam-ui"
-  repository_description = "OneCx iam UI"
+  repository_description = "OneCX Identity Access Management UI"
   team_id                = module.onecx-iam-team.team_id
 }
