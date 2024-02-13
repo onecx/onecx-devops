@@ -1,7 +1,7 @@
 variable "organisation" {
   description = "sonar-cloud organization"
   type = string
-  default = null
+  default = "onecx-apps"
 }
 
 variable "repository_name" {
