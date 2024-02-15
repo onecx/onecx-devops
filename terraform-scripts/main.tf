@@ -59,3 +59,7 @@ module "onecx-permission" {
 module "onecx-iam" {
   source = "./products/onecx-iam"
 }
+
+module "onecx-welcome" {
+  source = "./products/onecx-welcome"
+}
