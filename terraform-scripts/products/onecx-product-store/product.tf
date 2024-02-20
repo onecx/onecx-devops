@@ -55,3 +55,12 @@ module "onecx-product-store-mfe-operator" {
   repository_description = "OneCx product store mfe k8s operator"
   team_id                = module.onecx-product-store-team.team_id
 }
+
+
+# ONECX-PRODUCT-STORE-MS-OPERATOR
+module "onecx-product-store-ms-operator" {
+  source = "../../modules/quarkus"
+  repository_name        = "onecx-product-store-ms-operator"
+  repository_description = "OneCx product store ms k8s operator"
+  team_id                = module.onecx-product-store-team.team_id
+}
