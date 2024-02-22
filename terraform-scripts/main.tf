@@ -63,3 +63,7 @@ module "onecx-iam" {
 module "onecx-welcome" {
   source = "./products/onecx-welcome"
 }
+
+module "onecx-shell" {
+  source = "./products/onecx-shell"
+}
