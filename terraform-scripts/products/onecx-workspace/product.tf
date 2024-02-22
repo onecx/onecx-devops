@@ -14,11 +14,6 @@ module "onecx-workspace" {
   repository_description = "OneCx workspace"
   team_id                = module.onecx-workspace-team.team_id
   team_name              = module.onecx-workspace-team.team_name
-  labels = {
-    onecx-workspace-svc          = "0ea5e9"
-    onecx-workspace-bff          = "14b8a6"
-    onecx-workspace-ui           = "6366f1"
-  }
 }
 
 # ONECX-WORKSPACE-SVC
