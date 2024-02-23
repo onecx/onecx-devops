@@ -11,7 +11,7 @@ jobs:
   Terraform:
     name: Terraform Plan & Apply
     runs-on: ubuntu-latest
-    environment: production    
+    
     env:
       SONARCLOUD_ORGANIZATION: ${{ secrets.SONARCLOUD_ORGANIZATION }}
       SONARCLOUD_TOKEN: ${{ secrets.SONARCLOUD_TOKEN }}
