@@ -3,13 +3,18 @@ on:
   push:
     branches:
       - main
+      
 permissions:
   contents: read
+
 jobs:
   Terraform:
     name: Terraform Plan & Apply
     runs-on: ubuntu-latest
     environment: production
+
+    permissions:
+      pull-requests: write
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
