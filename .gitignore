@@ -1,3 +1,7 @@
 .idea
 *.iml
 .terraform
+*.tfstate
+.terraform
+terraform-scripts/.terraform
+terraform-scripts/*.tfstate

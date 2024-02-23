@@ -1,11 +1,5 @@
-terraform {
-  cloud {
-    organization = "onecx-devops-github"
-
-    workspaces {
-      name = "devops"
-    }
-  }
+provider "aws" {
+  region  = "eu-central-1"
 }
 
 provider "github" {

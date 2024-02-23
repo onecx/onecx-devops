@@ -1,17 +1,13 @@
-name: 'Terraform'
-
+name: Pull Request
 on:
-  push:
+  pull_request:
     branches:
       - main
-  pull_request:
-
 permissions:
   contents: read
-
 jobs:
-  terraform:
-    name: 'Terraform'
+  Terraform:
+    name: Terraform Plan
     runs-on: ubuntu-latest
     environment: production
 
@@ -22,41 +18,35 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./terraform-scripts
-
+        working-directory: ./terraform-scripts          
     steps:
-    #  Checkout the repository to the GitHub Actions runner
-    - name: Checkout
-      uses: actions/checkout@v3
+    - uses: actions/checkout@v4  
 
-    # Install the latest version of Terraform CLI and configure the Terraform CLI configuration file with a Terraform Cloud user API token
-    - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v2
+    - uses: hashicorp/setup-terraform@v3
       with:
         terraform_version: 1.5.4
-        cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
 
     # Checks that all Terraform configuration files adhere to a canonical format
-    - name: Terraform Format
-      id: fmt
-      run: terraform fmt -check
+    - run: terraform fmt -check
+      id: fmt      
       continue-on-error: true
 
-    # Initialize a new or existing Terraform working directory by creating initial files, loading any remote state, downloading modules, etc
-    - name: Terraform Init
-      id: init
-      # if: steps.check_files.outputs.files_exists != 'true'
-      run: terraform init
+    - run: terraform init
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        AWS_ACCESS_KEY_ID:  ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-    - name: Terraform Validate
-      id: validate
-      run: terraform validate -no-color
+    - run: terraform validate -no-color
+       id: validate
 
-    # Generates an execution plan for Terraform
-    - name: Terraform Plan
+    - run: terraform plan -no-color -input=false
       id: plan
-      run: terraform plan -no-color -input=false
       continue-on-error: true
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        AWS_ACCESS_KEY_ID:  ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
     - name: Tidy Plan output
       run : |
@@ -102,5 +92,3 @@ jobs:
             repo: context.repo.repo,
             body: output
           })
-
-  
