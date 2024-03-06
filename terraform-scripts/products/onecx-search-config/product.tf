@@ -23,3 +23,19 @@ module "onecx-search-config-svc" {
   repository_description = "OneCx search config service"
   team_id                = module.onecx-search-config-team.team_id
 }
+
+# ONECX-SEARCH-CONFIG-BFF
+module "onecx-search-config-bff" {
+  source = "../../modules/quarkus"
+  repository_name        = "onecx-search-config-bff"
+  repository_description = "OneCX search config BFF"
+  team_id                = module.onecx-search-config-team.team_id
+}
+
+# ONECX-SEARCH-CONFIG-UI
+module "onecx-search-config-ui" {
+  source = "../../modules/angular"
+  repository_name        = "onecx-search-config-ui"
+  repository_description = "OneCX search config UI"
+  team_id                = module.onecx-search-config-team.team_id
+}
