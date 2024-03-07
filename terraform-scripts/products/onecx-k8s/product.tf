@@ -17,13 +17,6 @@ module "onecx-k8s-product" {
 }
 
 # POSTGRESQL OPERATOR
-module "onecx-db-postgresql-operator" {
-  source = "../../modules/quarkus"
-  repository_name        = "onecx-db-postgresql-operator"
-  repository_description = "onecx postgresql schema operator"
-  team_id                = module.onecx-k8s.team_id
-}
-
 module "onecx-k8s-db-postgresql-operator" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-k8s-db-postgresql-operator"
