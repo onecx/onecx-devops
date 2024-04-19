@@ -64,3 +64,11 @@ module "onecx-product-store-ms-operator" {
   repository_description = "OneCx product store ms k8s operator"
   team_id                = module.onecx-product-store-team.team_id
 }
+
+# ONECX-PRODUCT-STORE-SLOT-OPERATOR
+module "onecx-product-store-slot-operator" {
+  source = "../../modules/quarkus"
+  repository_name        = "onecx-product-store-slot-operator"
+  repository_description = "OneCx product store slot k8s operator"
+  team_id                = module.onecx-product-store-team.team_id
+}
