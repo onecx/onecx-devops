@@ -61,3 +61,7 @@ module "onecx-welcome" {
 module "onecx-shell" {
   source = "./products/onecx-shell"
 }
+
+module "onecx-example" {
+  source = "./products/onecx-example"
+}
