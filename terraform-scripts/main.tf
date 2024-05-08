@@ -65,3 +65,7 @@ module "onecx-shell" {
 module "onecx-example" {
   source = "./products/onecx-example"
 }
+
+module "onecx-favorites" {
+  source = "./products/onecx-favorites"
+}
