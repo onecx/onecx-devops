@@ -73,3 +73,7 @@ module "onecx-favorites" {
 module "onecx-data-orchestrator" {
   source = "./products/onecx-data-orchestrator"
 }
+
+module "onecx-develop" {
+  source = "./products/onecx-develop"
+}
