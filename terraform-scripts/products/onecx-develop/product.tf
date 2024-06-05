@@ -15,3 +15,12 @@ module "onecx-develop-product" {
   team_id                = module.onecx-develop.team_id
   team_name              = module.onecx-develop.team_name
 }
+
+# ONECX-DEVELOP-ADMINER
+module "onecx-develop-adminer" {
+  source = "../../modules/base"
+  repository_name        = "onecx-develop-adminer"
+  repository_description = "OneCx develop adminer"
+  team_id                = module.onecx-develop.team_id
+  team_name              = module.onecx-develop.team_name
+}
