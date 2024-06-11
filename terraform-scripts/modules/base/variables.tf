@@ -43,20 +43,10 @@ variable "patterns" {
   ]
 }
 
-variable "label_color_product" {
-  description = "Color of the product label"
-  type = string
-  default = "f97316"
-}
-
-variable "label_color_team" {
-  description = "Color of the team label"
-  type = string
-  default = "84cc16"
-}
-
 variable "labels" {
   description = "The map of labels name and color"
   type = map(string)
-  default = {}
+  default = {
+    docker-image = "0ea5e9"
+  }
 }

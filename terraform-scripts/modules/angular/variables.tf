@@ -27,3 +27,11 @@ variable "branch" {
   type = string
   default = "main"
 }
+
+variable "labels" {
+  description = "The map of labels name and color"
+  type = map(string)
+  default = {
+    docker-image = "0ea5e9"
+  }
+}
