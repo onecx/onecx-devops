@@ -27,3 +27,9 @@ module "sonarcloud" {
   organisation = module.global.organisation
 }
 
+# GITHUB REPOSITORY LABELS
+module "labels" {
+  source = "../github/labels"
+  repository_name = module.repository.repository_name
+  labels = var.labels
+}
