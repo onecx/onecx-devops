@@ -77,3 +77,7 @@ module "onecx-data-orchestrator" {
 module "onecx-develop" {
   source = "./products/onecx-develop"
 }
+
+module "onecx-infra" {
+  source = "./products/onecx-infra"
+}
