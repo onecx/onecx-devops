@@ -66,10 +66,6 @@ module "onecx-example" {
   source = "./products/onecx-example"
 }
 
-module "onecx-favorites" {
-  source = "./products/onecx-favorites"
-}
-
 module "onecx-data-orchestrator" {
   source = "./products/onecx-data-orchestrator"
 }
