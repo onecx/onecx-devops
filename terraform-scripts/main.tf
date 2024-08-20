@@ -77,3 +77,7 @@ module "onecx-develop" {
 module "onecx-infra" {
   source = "./products/onecx-infra"
 }
+
+module "onecx-bookmark" {
+  source = "./products/onecx-bookmark"
+}
