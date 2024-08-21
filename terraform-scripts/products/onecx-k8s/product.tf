@@ -23,3 +23,12 @@ module "onecx-k8s-db-postgresql-operator" {
   repository_description = "onecx postgresql schema operator"
   team_id                = module.onecx-k8s.team_id
 }
+
+# ONECX-K8S-CRDS
+module "onecx-k8s-crds" {
+  source = "../../modules/base"
+  repository_name        = "onecx-k8s-crds"
+  repository_description = "OneCx k8s custom resources"
+  team_id                = module.onecx-k8s.team_id
+  team_name              = module.onecx-k8s.team_name
+}
