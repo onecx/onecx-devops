@@ -15,3 +15,12 @@ module "onecx-infra-product" {
   team_id                = module.onecx-infra.team_id
   team_name              = module.onecx-infra.team_name
 }
+
+# ONECX-INFRA-KC-OPERATOR
+module "onecx-infra-kc-operator" {
+  source = "../../modules/base"
+  repository_name        = "onecx-infra-kc-operator"
+  repository_description = "OneCx infra keycloak operator"
+  team_id                = module.onecx-infra.team_id
+  team_name              = module.onecx-infra.team_name
+}
