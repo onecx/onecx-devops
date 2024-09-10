@@ -81,3 +81,7 @@ module "onecx-infra" {
 module "onecx-bookmark" {
   source = "./products/onecx-bookmark"
 }
+
+module "onecx-local" {
+  source = "./products/onecx-local"
+}
