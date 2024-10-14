@@ -39,12 +39,3 @@ module "onecx-workspace-ui" {
   repository_description = "OneCx workspace UI"
   team_id                = module.onecx-workspace-team.team_id
 }
-
-
-# ONECX-WORKSPACE-EXIM-SVC
-module "onecx-workspace-exim-svc" {
-  source = "../../modules/quarkus"
-  repository_name        = "onecx-workspace-exim-svc"
-  repository_description = "OneCx workspace export/import service"
-  team_id                = module.onecx-workspace-team.team_id
-}
