@@ -32,3 +32,10 @@ module "labels" {
   repository_name = module.repository.repository_name
   labels = merge({  "Team_${var.team_name}" = var.label_color_team, (module.repository.repository_name) = var.label_color_product }, var.labels)
 }
+
+# GITHUB PRODUCT REPOSITORY TOPICS
+module "topics" {
+  source = "../github/topics"
+  repository_name = module.repository.repository_name
+  topics = ["onecx-product"]
+}
