@@ -33,6 +33,8 @@ variable "labels" {
   type = map(string)
   default = {
     docker-image = "0ea5e9"
+    fix = "e9520e"
+    feature = "0ee952"
   }
 }
 

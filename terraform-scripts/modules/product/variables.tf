@@ -58,5 +58,8 @@ variable "label_color_team" {
 variable "labels" {
   description = "The map of labels name and color"
   type = map(string)
-  default = {}
+  default = {
+    fix = "e9520e"
+    feature = "0ee952"
+  }
 }
