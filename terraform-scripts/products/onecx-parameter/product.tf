@@ -44,3 +44,11 @@ module "onecx-parameter-ui" {
   repository_description = "OneCx Parameter Management UI"
   team_id                = module.onecx-parameter-team.team_id
 }
+
+# ONECX-PARAMETER-OPERATOR
+module "onecx-parameter-operator" {
+  source = "../../modules/quarkus"
+  repository_name        = "onecx-parameter-operator"
+  repository_description = "OneCx parameter k8s operator"
+  team_id                = module.onecx-parameter-team.team_id
+}
