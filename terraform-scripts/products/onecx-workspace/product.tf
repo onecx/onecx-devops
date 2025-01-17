@@ -39,3 +39,11 @@ module "onecx-workspace-ui" {
   repository_description = "OneCx workspace UI"
   team_id                = module.onecx-workspace-team.team_id
 }
+
+# ONECX-WORKSPACE-API-BFF
+module "onecx-workspace-api-bff" {
+  source = "../../modules/quarkus"
+  repository_name        = "onecx-workspace-api-bff"
+  repository_description = "OneCx workspace API BFF"
+  team_id                = module.onecx-workspace-team.team_id
+}
