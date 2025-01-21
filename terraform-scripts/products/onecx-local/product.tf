@@ -16,3 +16,12 @@ module "onecx-local-env" {
   team_id                = module.onecx-local.team_id
   team_name              = module.onecx-local.team_name
 }
+
+# ONECX-LOCAL-ENV-CLI
+module "onecx-local-env-cli" {
+  source = "../../modules/base"
+  repository_name        = "onecx-local-env-cli"
+  repository_description = "OneCx local docker compose environment CLI"
+  team_id                = module.onecx-local.team_id
+  team_name              = module.onecx-local.team_name
+}
