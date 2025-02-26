@@ -16,10 +16,10 @@ module "onecx-test" {
   team_name              = module.onecx-test-team.team_name
 }
 
-# ONECX-TEST-SECURITY-OPERATOR
-module "onecx-test-security-operator" {
+# ONECX-TEST-OPERATOR
+module "onecx-test-operator" {
   source = "../../modules/quarkus"
-  repository_name        = "onecx-test-svc"
-  repository_description = "OneCX test security operator"
+  repository_name        = "onecx-test-operator"
+  repository_description = "OneCX test operator"
   team_id                = module.onecx-test-team.team_id
 }
