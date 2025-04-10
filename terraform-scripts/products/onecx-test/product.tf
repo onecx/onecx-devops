@@ -23,3 +23,11 @@ module "onecx-test-operator" {
   repository_description = "OneCX test operator"
   team_id                = module.onecx-test-team.team_id
 }
+
+# ONECX-TEST-OIDC
+module "onecx-test-oidc" {
+  source = "../../modules/quarkus"
+  repository_name        = "onecx-test-oidc"
+  repository_description = "OneCX test oidc"
+  team_id                = module.onecx-test-team.team_id
+}
