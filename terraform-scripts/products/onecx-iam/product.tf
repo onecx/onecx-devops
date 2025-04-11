@@ -47,3 +47,11 @@ module "onecx-iam-ui" {
   repository_description = "OneCX Identity Access Management UI"
   team_id                = module.onecx-iam-team.team_id
 }
+
+# ONECX-IAM-SVC
+module "onecx-iam-svc" {
+  source = "../../modules/quarkus"
+  repository_name        = "onecx-iam-svc"
+  repository_description = "OneCX Identity Access Management Service"
+  team_id                = module.onecx-iam-team.team_id
+}
