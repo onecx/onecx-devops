@@ -39,3 +39,9 @@ variable "project_repo" {
   type = bool
   default = false
 }
+
+variable "archived" {
+  description = "Specifies if the repository should be archived. Defaults to false. NOTE Currently, the API does not support unarchiving."
+  type = bool
+  default = false
+}

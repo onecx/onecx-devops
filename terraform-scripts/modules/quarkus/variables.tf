@@ -39,3 +39,8 @@ variable "labels" {
   }
 }
 
+variable "archived" {
+  description = "Specifies if the repository should be archived. Defaults to false."
+  type = bool
+  default = false
+}
