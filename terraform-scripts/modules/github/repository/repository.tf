@@ -6,6 +6,7 @@ resource "github_repository" "repository" {
   has_wiki         = false
   has_projects     = true
   auto_init        = true
+  archived         = var.archived
   license_template = var.license_template
   allow_merge_commit = false
   allow_rebase_merge = false
