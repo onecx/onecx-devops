@@ -54,6 +54,7 @@ module "onecx-product-store-mfe-operator" {
   repository_name        = "onecx-product-store-mfe-operator"
   repository_description = "OneCx product store mfe k8s operator"
   team_id                = module.onecx-product-store-team.team_id
+  archived               = true
 }
 
 
@@ -63,6 +64,7 @@ module "onecx-product-store-ms-operator" {
   repository_name        = "onecx-product-store-ms-operator"
   repository_description = "OneCx product store ms k8s operator"
   team_id                = module.onecx-product-store-team.team_id
+  archived               = true
 }
 
 # ONECX-PRODUCT-STORE-SLOT-OPERATOR
@@ -71,4 +73,5 @@ module "onecx-product-store-slot-operator" {
   repository_name        = "onecx-product-store-slot-operator"
   repository_description = "OneCx product store slot k8s operator"
   team_id                = module.onecx-product-store-team.team_id
+  archived               = true
 }
