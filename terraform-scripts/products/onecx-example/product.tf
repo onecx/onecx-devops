@@ -23,3 +23,11 @@ module "onecx-example-custom-auth-ui" {
   repository_description = "OneCx example custom auth UI"
   team_id                = module.onecx-example-team.team_id
 }
+
+# ONECX-EXAMPLE-CUSTOM-AUTH-BFF
+module "onecx-example-custom-auth-bff" {
+  source = "../../modules/quarkus"
+  repository_name        = "onecx-example-custom-auth-bff"
+  repository_description = "OneCx example custom auth BFF"
+  team_id                = module.onecx-example-team.team_id
+}
