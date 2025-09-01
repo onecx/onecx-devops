@@ -1,6 +1,6 @@
 
 # TEAM ONECX-ADMIN
-module "onecx-announcement-team" {
+module "onecx-admin-team" {
   source = "../../modules/github/team"
   team_name        = "onecx-admin"
   team_description = "OneCx Admin services team"
