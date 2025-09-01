@@ -89,3 +89,7 @@ module "onecx-local" {
 module "onecx-test" {
   source = "./products/onecx-test"
 }
+
+module "onecx-admin" {
+  source = "./products/onecx-admin"
+}
