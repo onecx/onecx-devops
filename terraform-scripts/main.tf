@@ -93,3 +93,7 @@ module "onecx-test" {
 module "onecx-admin" {
   source = "./products/onecx-admin"
 }
+
+module "onecx-hello-world" {
+  source = "./products/onecx-hello-world"
+}
