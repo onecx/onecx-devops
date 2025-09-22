@@ -31,3 +31,11 @@ module "onecx-hello-world-bff" {
   repository_description = "OneCx Hello World BFF"
   team_id                = module.onecx-hello-world-team.team_id
 }
+
+# ONECX-HELLO-WORLD-UI
+module "onecx-hello-world-ui" {
+  source = "../../modules/angular"
+  repository_name        = "onecx-hello-world-ui"
+  repository_description = "OneCX Hello World UI"
+  team_id                = module.onecx-hello-world-team.team_id
+}
