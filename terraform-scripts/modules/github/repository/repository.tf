@@ -11,6 +11,7 @@ resource "github_repository" "repository" {
   allow_merge_commit = false
   allow_rebase_merge = false
   allow_squash_merge = true
+  allow_auto_merge   = var.auto_merge
   delete_branch_on_merge = true
 }
 
