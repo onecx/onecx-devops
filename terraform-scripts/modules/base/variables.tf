@@ -51,5 +51,6 @@ variable "labels" {
     fix = "e9520e"
     feature = "0ee952"
     config = "c00ee9"
+    helm = "0052cc"
   }
 }
