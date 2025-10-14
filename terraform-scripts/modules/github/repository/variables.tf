@@ -45,3 +45,9 @@ variable "archived" {
   type = bool
   default = false
 }
+
+variable "auto_merge" {
+  description = "Set to true to allow auto-merging pull requests on the repository."
+  type = bool
+  default = false
+}
