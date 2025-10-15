@@ -39,3 +39,15 @@ variable "labels" {
     helm = "0052cc"
   }
 }
+
+variable "archived" {
+  description = "Specifies if the repository should be archived. Defaults to false."
+  type = bool
+  default = false
+}
+
+variable "auto_merge" {
+  description = "Set to true to allow auto-merging pull requests on the repository."
+  type = bool
+  default = true
+}
