@@ -10,6 +10,8 @@ module "repository" {
   team_permission        = var.team_permission
   team_id                = var.team_id
   branch                 = var.branch
+  archived               = var.archived
+  auto_merge             = var.auto_merge
 }
 
 # GITHUB REPOSITORY RULES
