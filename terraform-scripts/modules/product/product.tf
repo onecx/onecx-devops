@@ -15,6 +15,15 @@ resource "github_branch_protection" "patterns" {
   repository_id = module.repository.repository_name
   pattern = each.key
 
+
+  dynamic "required_status_checks" {
+    for_each = length(var.pr_check) > 0 ? [1] : []
+    content {
+      strict   = true
+      contexts = var.pr_check
+    }
+  }
+
   require_conversation_resolution = true
 
   required_pull_request_reviews {
