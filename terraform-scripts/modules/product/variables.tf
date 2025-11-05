@@ -66,3 +66,9 @@ variable "labels" {
     helm = "0052cc"
   }
 }
+
+variable "pr_check" {
+  description = "product pull request check context"
+  type = list(string)
+  default = []
+}
