@@ -33,7 +33,7 @@ module "labels" {
   labels = merge({  "Team_${var.team_name}" = var.label_color_team, (module.repository.repository_name) = var.label_color_product })
 }
 
-module "labels" {
+module "labels-product" {
   source = "../github/labels"
   repository_name = module.repository.repository_name
   labels = var.labels
