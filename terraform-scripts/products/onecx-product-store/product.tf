@@ -14,6 +14,9 @@ module "onecx-product-store" {
   repository_description = "OneCx product store"
   team_id                = module.onecx-product-store-team.team_id
   team_name              = module.onecx-product-store-team.team_name
+  pr_check = [
+    "pr / helm / helm build and push"
+  ]
 }
 
 # ONECX-PRODUCT-STORE-SVC
