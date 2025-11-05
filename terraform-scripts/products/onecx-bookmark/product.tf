@@ -14,11 +14,6 @@ module "onecx-bookmark" {
   repository_description = "OneCx Bookmark Management"
   team_id                = module.onecx-bookmark-team.team_id
   team_name              = module.onecx-bookmark-team.team_name
-  labels = {
-    onecx-bookmark-svc = "0ea5e9"
-    onecx-bookmark-bff = "14b8a6"
-    onecx-bookmark-ui  = "6366f1"
-  }  
 }
 
 # ONECX-BOOKMARK-SVC
