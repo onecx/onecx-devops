@@ -12,6 +12,8 @@ module "onecx-test" {
   source = "../../modules/product"
   repository_name        = "onecx-test"
   repository_description = "OneCx test"
+  homepage_url           = "https://onecx.github.io/docs/onecx-test/current/general/index.html"
+  topics                 = ["product", "test"]
   team_id                = module.onecx-test-team.team_id
   team_name              = module.onecx-test-team.team_name
 }
@@ -21,6 +23,8 @@ module "onecx-test-operator" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-test-operator"
   repository_description = "OneCX test operator"
+  homepage_url           = "https://onecx.github.io/docs/onecx-test/current/onecx-test-operator/index.html"
+  topics                 = ["java", "quarkus", "operator", "test"]
   team_id                = module.onecx-test-team.team_id
 }
 
@@ -29,5 +33,7 @@ module "onecx-test-oidc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-test-oidc"
   repository_description = "OneCX test oidc"
+  homepage_url           = "https://onecx.github.io/docs/onecx-test/current/onecx-test-oidc/index.html"
+  topics                 = ["java", "quarkus", "svc", "test"]
   team_id                = module.onecx-test-team.team_id
 }

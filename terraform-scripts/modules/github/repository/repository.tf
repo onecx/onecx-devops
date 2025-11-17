@@ -1,6 +1,8 @@
 resource "github_repository" "repository" {
   name             = var.repository_name
   description      = var.repository_description
+  homepage_url     = var.homepage_url
+  topics           = var.topics
   has_issues       = var.project_repo
   has_discussions  = var.project_repo
   has_wiki         = false

@@ -12,6 +12,8 @@ module "onecx-help" {
   source = "../../modules/product"
   repository_name        = "onecx-help"
   repository_description = "OneCx help"
+  homepage_url           = "https://onecx.github.io/docs/onecx-help/current/general/index.html"
+  topics                 = ["product", "help"]
   team_id                = module.onecx-help-team.team_id
   team_name              = module.onecx-help-team.team_name
 }
@@ -21,6 +23,8 @@ module "onecx-help-svc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-help-svc"
   repository_description = "OneCX Help Management SVC"
+  homepage_url           = "https://onecx.github.io/docs/onecx-help/current/onecx-help-svc/index.html"
+  topics                 = ["java", "quarkus", "svc", "help"]
   team_id                = module.onecx-help-team.team_id
 }
 
@@ -29,6 +33,8 @@ module "onecx-help-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-help-bff"
   repository_description = "OneCX Help Management BFF"
+  homepage_url           = "https://onecx.github.io/docs/onecx-help/current/onecx-help-bff/index.html"
+  topics                 = ["java", "quarkus", "bff", "help"]
   team_id                = module.onecx-help-team.team_id
 }
 
@@ -37,5 +43,7 @@ module "onecx-help-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-help-ui"
   repository_description = "OneCX Help Management UI"
+  homepage_url           = "https://onecx.github.io/docs/onecx-help/current/onecx-help-ui/index.html"
+  topics                 = ["angular", "ui", "help"]
   team_id                = module.onecx-help-team.team_id
 }

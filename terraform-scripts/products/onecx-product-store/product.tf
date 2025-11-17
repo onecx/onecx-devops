@@ -12,6 +12,8 @@ module "onecx-product-store" {
   source = "../../modules/product"
   repository_name        = "onecx-product-store"
   repository_description = "OneCx product store"
+  homepage_url           = "https://onecx.github.io/docs/onecx-product-store/current/general/index.html"
+  topics                 = ["product", "product-store"]
   team_id                = module.onecx-product-store-team.team_id
   team_name              = module.onecx-product-store-team.team_name
 }
@@ -21,6 +23,8 @@ module "onecx-product-store-svc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-product-store-svc"
   repository_description = "OneCx product store service"
+  homepage_url           = "https://onecx.github.io/docs/onecx-product-store/current/onecx-product-store-svc/index.html"
+  topics                 = ["java", "quarkus", "svc", "product-store"]
   team_id                = module.onecx-product-store-team.team_id
 }
 
@@ -29,6 +33,8 @@ module "onecx-product-store-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-product-store-bff"
   repository_description = "OneCx product store BFF"
+  homepage_url           = "https://onecx.github.io/docs/onecx-product-store/current/onecx-product-store-bff/index.html"
+  topics                 = ["java", "quarkus", "bff", "product-store"]
   team_id                = module.onecx-product-store-team.team_id
 }
 
@@ -37,6 +43,8 @@ module "onecx-product-store-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-product-store-ui"
   repository_description = "OneCx product store UI"
+  homepage_url           = "https://onecx.github.io/docs/onecx-product-store/current/onecx-product-store-ui/index.html"
+  topics                 = ["angular", "ui", "product-store"]
   team_id                = module.onecx-product-store-team.team_id
 }
 
@@ -45,6 +53,8 @@ module "onecx-product-store-operator" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-product-store-operator"
   repository_description = "OneCx product store k8s operator"
+  homepage_url           = "https://onecx.github.io/docs/onecx-product-store/current/onecx-product-store-operator/index.html"
+  topics                 = ["java", "quarkus", "operator", "product-store"]
   team_id                = module.onecx-product-store-team.team_id
 }
 

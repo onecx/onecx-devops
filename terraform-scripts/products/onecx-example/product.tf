@@ -12,6 +12,7 @@ module "onecx-example" {
   source = "../../modules/product"
   repository_name        = "onecx-example"
   repository_description = "OneCx example"
+  topics                 = ["product", "example"]
   team_id                = module.onecx-example-team.team_id
   team_name              = module.onecx-example-team.team_name
 }
@@ -21,6 +22,7 @@ module "onecx-example-custom-auth-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-example-custom-auth-ui"
   repository_description = "OneCx example custom auth UI"
+  topics                 = ["angular", "ui", "example"]
   team_id                = module.onecx-example-team.team_id
 }
 
@@ -29,5 +31,6 @@ module "onecx-example-custom-auth-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-example-custom-auth-bff"
   repository_description = "OneCx example custom auth BFF"
+  topics                 = ["java, "quarkus", "bff", "example"]
   team_id                = module.onecx-example-team.team_id
 }

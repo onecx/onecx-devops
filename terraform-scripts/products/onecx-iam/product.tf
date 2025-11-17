@@ -12,6 +12,8 @@ module "onecx-iam" {
   source = "../../modules/product"
   repository_name        = "onecx-iam"
   repository_description = "OneCX Identity Access Management Product"
+  homepage_url           = "https://onecx.github.io/docs/onecx-iam/current/general/index.html"
+  topics                 = ["product", "iam"]
   team_id                = module.onecx-iam-team.team_id
   team_name              = module.onecx-iam-team.team_name
 }
@@ -21,6 +23,8 @@ module "onecx-iam-kc-svc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-iam-kc-svc"
   repository_description = "OneCX Identity Access Management Keycloak Service"
+  homepage_url           = "https://onecx.github.io/docs/onecx-iam/current/onecx-iam-kc-svc/index.html"
+  topics                 = ["java", "quarkus", "svc", "iam"]
   team_id                = module.onecx-iam-team.team_id
 }
 
@@ -29,6 +33,8 @@ module "onecx-iam-kc-client-operator" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-iam-kc-client-operator"
   repository_description = "OneCx iam keycloak client operator"
+  homepage_url           = "https://onecx.github.io/docs/onecx-iam/current/onecx-iam-kc-client-operator/index.html"
+  topics                 = ["java", "quarkus", "operator", "iam"]
   team_id                = module.onecx-iam-team.team_id
 }
 
@@ -37,6 +43,8 @@ module "onecx-iam-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-iam-bff"
   repository_description = "OneCX Identity Access Management BFF"
+  homepage_url           = "https://onecx.github.io/docs/onecx-iam/current/onecx-iam-bff/index.html"
+  topics                 = ["java", "quarkus", "bff", "iam"]
   team_id                = module.onecx-iam-team.team_id
 }
 
@@ -45,6 +53,8 @@ module "onecx-iam-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-iam-ui"
   repository_description = "OneCX Identity Access Management UI"
+  homepage_url           = "https://onecx.github.io/docs/onecx-iam/current/onecx-iam-ui/index.html"
+  topics                 = ["angular", "ui", "iam"]
   team_id                = module.onecx-iam-team.team_id
 }
 
@@ -53,5 +63,7 @@ module "onecx-iam-svc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-iam-svc"
   repository_description = "OneCX Identity Access Management Service"
+  homepage_url           = "https://onecx.github.io/docs/onecx-iam/current/onecx-iam-svc/index.html"
+  topics                 = ["java", "quarkus", "svc", "iam"]
   team_id                = module.onecx-iam-team.team_id
 }

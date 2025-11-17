@@ -12,6 +12,8 @@ module "onecx-theme" {
   source = "../../modules/product"
   repository_name        = "onecx-theme"
   repository_description = "OneCx Theme"
+  homepage_url           = "https://onecx.github.io/docs/onecx-theme/current/general/index.html"
+  topics                 = ["product", "theme"]
   team_id                = module.onecx-theme-team.team_id
   team_name              = module.onecx-theme-team.team_name
 }
@@ -21,6 +23,8 @@ module "onecx-theme-svc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-theme-svc"
   repository_description = "OneCx Theme Service"
+  homepage_url           = "https://onecx.github.io/docs/onecx-theme/current/onecx-theme-svc/index.html"
+  topics                 = ["java", "quarkus", "svc", "theme"]
   team_id                = module.onecx-theme-team.team_id
 }
 
@@ -29,6 +33,8 @@ module "onecx-theme-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-theme-bff"
   repository_description = "OneCx Theme BFF"
+  homepage_url           = "https://onecx.github.io/docs/onecx-theme/current/onecx-theme-bff/index.html"
+  topics                 = ["java", "quarkus", "bff", "theme"]
   team_id                = module.onecx-theme-team.team_id
 }
 
@@ -37,5 +43,7 @@ module "onecx-theme-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-theme-ui"
   repository_description = "OneCx Theme UI"
+  homepage_url           = "https://onecx.github.io/docs/onecx-theme/current/onecx-theme-ui/index.html"
+  topics                 = ["angular", "ui", "theme"]
   team_id                = module.onecx-theme-team.team_id
 }

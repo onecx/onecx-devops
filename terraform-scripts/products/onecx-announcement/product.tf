@@ -12,6 +12,8 @@ module "onecx-announcement" {
   source = "../../modules/product"
   repository_name        = "onecx-announcement"
   repository_description = "OneCx Announcement"
+  homepage_url           = "https://onecx.github.io/docs/onecx-announcement/current/general/index.html"
+  topics                 = ["product, "announcement"]
   team_id                = module.onecx-announcement-team.team_id
   team_name              = module.onecx-announcement-team.team_name
 }
@@ -21,6 +23,8 @@ module "onecx-announcement-svc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-announcement-svc"
   repository_description = "OneCx Announcement Service"
+  homepage_url           = "https://onecx.github.io/docs/onecx-announcement/current/onecx-announcement-svc/index.html"
+  topics                 = ["java, "quarkus", "svc", "announcement"]
   team_id                = module.onecx-announcement-team.team_id
 }
 
@@ -29,6 +33,8 @@ module "onecx-announcement-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-announcement-bff"
   repository_description = "OneCx Announcement BFF"
+  homepage_url           = "https://onecx.github.io/docs/onecx-announcement/current/onecx-announcement-bff/index.html"
+  topics                 = ["java, "quarkus", "bff", "announcement"]
   team_id                = module.onecx-announcement-team.team_id
 }
 
@@ -37,5 +43,7 @@ module "onecx-announcement-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-announcement-ui"
   repository_description = "OneCx Announcement UI"
+  homepage_url           = "https://onecx.github.io/docs/onecx-announcement/current/onecx-announcement-bff/index.html"
+  topics                 = ["angular, "ui", "announcement"]
   team_id                = module.onecx-announcement-team.team_id
 }

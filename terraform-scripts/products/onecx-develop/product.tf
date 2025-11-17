@@ -12,6 +12,8 @@ module "onecx-develop-product" {
   source = "../../modules/product"
   repository_name        = "onecx-develop"
   repository_description = "OneCx develop Management"
+  homepage_url           = "https://onecx.github.io/docs/onecx-develop/current/general/index.html"
+  topics                 = ["product", "develop"]
   team_id                = module.onecx-develop.team_id
   team_name              = module.onecx-develop.team_name
 }

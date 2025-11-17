@@ -86,3 +86,15 @@ variable "auto_merge" {
   type = bool
   default = true
 }
+
+variable "homepage_url" {
+  description = "URL of a page describing the project"
+  type        = string
+  default     = null
+}
+
+variable "topics" {
+  description = "List of topics of the repository"
+  type        = list(string)
+  default     = []
+}

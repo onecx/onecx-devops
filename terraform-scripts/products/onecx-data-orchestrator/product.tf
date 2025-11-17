@@ -11,6 +11,8 @@ module "onecx-data-orchestrator" {
   source = "../../modules/product"
   repository_name        = "onecx-data-orchestrator"
   repository_description = "OneCx data orchestrator"
+  homepage_url           = "https://onecx.github.io/docs/onecx-data-orchestrator/current/general/index.html"
+  topics                 = ["product", "data-orchestrator"]
   team_id                = module.onecx-data-orchestrator-team.team_id
   team_name              = module.onecx-data-orchestrator-team.team_name
 }
@@ -20,6 +22,8 @@ module "onecx-data-orchestrator-operator" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-data-orchestrator-operator"
   repository_description = "OneCx data orchestrator operator"
+  homepage_url           = "https://onecx.github.io/docs/onecx-data-orchestrator/current/onecx-data-orchestrator-operator/index.html"
+  topics                 = ["java", "quarkus", "operator", "data-orchestrator"]
   team_id                = module.onecx-data-orchestrator-team.team_id
 }
 
@@ -29,6 +33,8 @@ module "onecx-data-orchestrator-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-data-orchestrator-bff"
   repository_description = "OneCX data orchestrator BFF"
+  homepage_url           = "https://onecx.github.io/docs/onecx-data-orchestrator/current/onecx-data-orchestrator-bff/index.html"
+  topics                 = ["java", "quarkus", "bff", "data-orchestrator"]
   team_id                = module.onecx-data-orchestrator-team.team_id
 }
 
@@ -37,5 +43,7 @@ module "onecx-data-orchestrator-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-data-orchestrator-ui"
   repository_description = "OneCX data orchestrator UI"
+  homepage_url           = "https://onecx.github.io/docs/onecx-data-orchestrator/current/onecx-data-orchestrator-ui/index.html"
+  topics                 = ["angular", "ui", "data-orchestrator"]
   team_id                = module.onecx-data-orchestrator-team.team_id
 }
