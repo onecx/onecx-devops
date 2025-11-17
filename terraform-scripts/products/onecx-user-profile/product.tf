@@ -34,7 +34,7 @@ module "onecx-user-profile-avatar-svc" {
   repository_name        = "onecx-user-profile-avatar-svc"
   repository_description = "OneCx user-profile avatar service"
   homepage_url           = "https://onecx.github.io/docs/onecx-user-profile/current/onecx-user-profile-avatar-svc/index.html"
-  topics                 = ["java", "quarkus", "svc", "user-profile"]
+  topics                 = ["java", "quarkus", "svc", "user-profile", "avatar"]
   team_id                = module.onecx-user-profile-team.team_id
 }
 

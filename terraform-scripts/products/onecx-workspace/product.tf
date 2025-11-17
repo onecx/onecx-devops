@@ -54,7 +54,7 @@ module "onecx-workspace-api-bff" {
   repository_name        = "onecx-workspace-api-bff"
   repository_description = "OneCx workspace API BFF"
   homepage_url           = "https://onecx.github.io/docs/onecx-workspace/current/onecx-workspace-api-bff/index.html"
-  topics                 = ["java", "quarkus", "bff", "workspace"]
+  topics                 = ["java", "quarkus", "bff", "workspace", "external", "api"]
   team_id                = module.onecx-workspace-team.team_id
 }
 
@@ -64,6 +64,6 @@ module "onecx-workspace-api-legacy" {
   repository_name        = "onecx-workspace-api-legacy"
   repository_description = "OneCx workspace API legacy"
   homepage_url           = "https://onecx.github.io/docs/onecx-workspace/current/onecx-workspace-api-legacy/index.html"
-  topics                 = ["java", "quarkus", "svc", "workspace"]
+  topics                 = ["java", "quarkus", "svc", "workspace", "legacy"]
   team_id                = module.onecx-workspace-team.team_id
 }
