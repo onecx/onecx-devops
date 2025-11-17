@@ -13,7 +13,7 @@ module "onecx-admin" {
   repository_name        = "onecx-admin"
   repository_description = "OneCx Admin"
   homepage_url           = "https://onecx.github.io/docs/onecx-admin/current/general/index.html"
-  topics                 = ["product, "admin"]
+  topics                 = ["product", "admin"]
   team_id                = module.onecx-admin-team.team_id
   team_name              = module.onecx-admin-team.team_name
 }
@@ -24,7 +24,7 @@ module "onecx-admin-bff" {
   repository_name        = "onecx-admin-bff"
   repository_description = "OneCx Admin BFF"
   homepage_url           = "https://onecx.github.io/docs/onecx-admin/current/onecx-admin-bff/index.html"
-  topics                 = ["java, "quarkus", "bff", "admin"]
+  topics                 = ["java", "quarkus", "bff", "admin"]
   team_id                = module.onecx-admin-team.team_id
 }
 
@@ -33,6 +33,6 @@ module "onecx-admin-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-admin-ui"
   repository_description = "OneCx Admin UI"
-  topics                 = ["angular, "ui", "admin"]
+  topics                 = ["angular", "ui", "admin"]
   team_id                = module.onecx-admin-team.team_id
 }

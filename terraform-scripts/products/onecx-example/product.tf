@@ -31,6 +31,6 @@ module "onecx-example-custom-auth-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-example-custom-auth-bff"
   repository_description = "OneCx example custom auth BFF"
-  topics                 = ["java, "quarkus", "bff", "example"]
+  topics                 = ["java", "quarkus", "bff", "example"]
   team_id                = module.onecx-example-team.team_id
 }
