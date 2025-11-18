@@ -12,7 +12,7 @@ module "onecx-local" {
 module "onecx-local-env" {
   source = "../../modules/base"
   repository_name        = "onecx-local-env"
-  repository_description = "OneCX Local Docker Compose Environment Setup"
+  repository_description = "OneCX Local Environment Setup"
   homepage_url           = "https://onecx.github.io/docs/onecx-local-env/current/general/index.html"
   topics                 = ["docker", "local-env", "local", "environment"]
   team_id                = module.onecx-local.team_id
@@ -23,7 +23,7 @@ module "onecx-local-env" {
 module "onecx-local-env-cli" {
   source = "../../modules/base"
   repository_name        = "onecx-local-env-cli"
-  repository_description = "OneCX Local Docker Compose Environment CLI"
+  repository_description = "OneCX Local Environment CLI"
   topics                 = ["cli", "local-env", "local", "environment"]
   team_id                = module.onecx-local.team_id
   team_name              = module.onecx-local.team_name
