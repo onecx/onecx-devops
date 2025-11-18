@@ -13,7 +13,7 @@ module "onecx-local-env" {
   source = "../../modules/base"
   repository_name        = "onecx-local-env"
   repository_description = "OneCX Local Environment Setup"
-  homepage_url           = "https://onecx.github.io/docs/onecx-local-env/current/general/index.html"
+  homepage_url           = "https://onecx.github.io/docs/onecx-local-env/current/general"
   topics                 = ["docker", "local-env", "local", "environment"]
   team_id                = module.onecx-local.team_id
   team_name              = module.onecx-local.team_name

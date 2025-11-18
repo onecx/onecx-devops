@@ -12,7 +12,7 @@ module "onecx-search-config" {
   source = "../../modules/product"
   repository_name        = "onecx-search-config"
   repository_description = "OneCX Search Configuration"
-  homepage_url           = "https://onecx.github.io/docs/onecx-search-config/current/general/index.html"
+  homepage_url           = "https://onecx.github.io/docs/onecx-search-config/current/general"
   topics                 = ["product", "search-config"]
   team_id                = module.onecx-search-config-team.team_id
   team_name              = module.onecx-search-config-team.team_name
@@ -23,7 +23,7 @@ module "onecx-search-config-svc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-search-config-svc"
   repository_description = "OneCX Search Configuration Backend Service"
-  homepage_url           = "https://onecx.github.io/docs/onecx-search-config/current/onecx-search-config-svc/index.html"
+  homepage_url           = "https://onecx.github.io/docs/onecx-search-config/current/onecx-search-config-svc"
   topics                 = ["java", "quarkus", "svc", "search-config"]
   team_id                = module.onecx-search-config-team.team_id
 }
@@ -33,7 +33,7 @@ module "onecx-search-config-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-search-config-bff"
   repository_description = "OneCX Search Configuration Backend-For-Frontend"
-  homepage_url           = "https://onecx.github.io/docs/onecx-search-config/current/onecx-search-config-bff/index.html"
+  homepage_url           = "https://onecx.github.io/docs/onecx-search-config/current/onecx-search-config-bff"
   topics                 = ["java", "quarkus", "bff", "search-config"]
   team_id                = module.onecx-search-config-team.team_id
 }
@@ -43,7 +43,7 @@ module "onecx-search-config-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-search-config-ui"
   repository_description = "OneCX Search Configuration UI"
-  homepage_url           = "https://onecx.github.io/docs/onecx-search-config/current/onecx-search-config-ui/index.html"
+  homepage_url           = "https://onecx.github.io/docs/onecx-search-config/current/onecx-search-config-ui"
   topics                 = ["angular", "ui", "search-config"]
   team_id                = module.onecx-search-config-team.team_id
 }

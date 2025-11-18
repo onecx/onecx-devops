@@ -12,7 +12,7 @@ module "onecx-admin" {
   source = "../../modules/product"
   repository_name        = "onecx-admin"
   repository_description = "OneCX Administration"
-  homepage_url           = "https://onecx.github.io/docs/onecx-admin/current/general/index.html"
+  homepage_url           = "https://onecx.github.io/docs/onecx-admin/current/general"
   topics                 = ["product", "administration"]
   team_id                = module.onecx-admin-team.team_id
   team_name              = module.onecx-admin-team.team_name
@@ -23,7 +23,7 @@ module "onecx-admin-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-admin-bff"
   repository_description = "OneCX Administration Backend-For-Frontend"
-  homepage_url           = "https://onecx.github.io/docs/onecx-admin/current/onecx-admin-bff/index.html"
+  homepage_url           = "https://onecx.github.io/docs/onecx-admin/current/onecx-admin-bff"
   topics                 = ["java", "quarkus", "bff", "administration"]
   team_id                = module.onecx-admin-team.team_id
 }

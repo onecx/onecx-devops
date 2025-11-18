@@ -12,7 +12,7 @@ module "onecx-shell" {
   source = "../../modules/product"
   repository_name        = "onecx-shell"
   repository_description = "OneCX Shell"
-  homepage_url           = "https://onecx.github.io/docs/onecx-shell/current/general/index.html"
+  homepage_url           = "https://onecx.github.io/docs/onecx-shell/current/general"
   topics                 = ["product", "shell"]
   team_id                = module.onecx-shell-team.team_id
   team_name              = module.onecx-shell-team.team_name
@@ -23,7 +23,7 @@ module "onecx-shell-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-shell-bff"
   repository_description = "OneCX Shell Backend-For-Frontend"
-  homepage_url           = "https://onecx.github.io/docs/onecx-shell/current/onecx-shell-bff/index.html"
+  homepage_url           = "https://onecx.github.io/docs/onecx-shell/current/onecx-shell-bff"
   topics                 = ["java", "quarkus", "bff", "shell"]
   team_id                = module.onecx-shell-team.team_id
 }
@@ -33,7 +33,7 @@ module "onecx-shell-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-shell-ui"
   repository_description = "OneCX Shell UI"
-  homepage_url           = "https://onecx.github.io/docs/onecx-shell/current/onecx-shell-ui/index.html"
+  homepage_url           = "https://onecx.github.io/docs/onecx-shell/current/onecx-shell-ui"
   topics                 = ["angular", "ui", "shell"]
   team_id                = module.onecx-shell-team.team_id
 }

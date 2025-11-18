@@ -12,7 +12,7 @@ module "onecx-tenant" {
   source = "../../modules/product"
   repository_name        = "onecx-tenant"
   repository_description = "OneCX Tenant"
-  homepage_url           = "https://onecx.github.io/docs/onecx-tenant/current/general/index.html"
+  homepage_url           = "https://onecx.github.io/docs/onecx-tenant/current/general"
   topics                 = ["product", "tenant"]
   team_id                = module.onecx-tenant-team.team_id
   team_name              = module.onecx-tenant-team.team_name
@@ -23,7 +23,7 @@ module "onecx-tenant-svc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-tenant-svc"
   repository_description = "OneCX Tenant Backend Service"
-  homepage_url           = "https://onecx.github.io/docs/onecx-tenant/current/onecx-tenant-svc/index.html"
+  homepage_url           = "https://onecx.github.io/docs/onecx-tenant/current/onecx-tenant-svc"
   topics                 = ["java", "quarkus", "svc", "tenant"]
   team_id                = module.onecx-tenant-team.team_id
 }
@@ -33,7 +33,7 @@ module "onecx-tenant-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-tenant-bff"
   repository_description = "OneCX Tenant Backend-For-Frontend"
-  homepage_url           = "https://onecx.github.io/docs/onecx-tenant/current/onecx-tenant-bff/index.html"
+  homepage_url           = "https://onecx.github.io/docs/onecx-tenant/current/onecx-tenant-bff"
   topics                 = ["java", "quarkus", "bff", "tenant"]
   team_id                = module.onecx-tenant-team.team_id
 }
@@ -43,7 +43,7 @@ module "onecx-tenant-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-tenant-ui"
   repository_description = "OneCX Tenant UI"
-  homepage_url           = "https://onecx.github.io/docs/onecx-tenant/current/onecx-tenant-ui/index.html"
+  homepage_url           = "https://onecx.github.io/docs/onecx-tenant/current/onecx-tenant-ui"
   topics                 = ["angular", "ui", "tenant"]
   team_id                = module.onecx-tenant-team.team_id
 }
