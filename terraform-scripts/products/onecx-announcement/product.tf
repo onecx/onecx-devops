@@ -3,7 +3,7 @@
 module "onecx-announcement-team" {
   source = "../../modules/github/team"
   team_name        = "onecx-announcement"
-  team_description = "OneCx Announcement services team"
+  team_description = "OneCX Announcement services team"
   team_members_file_path   = "products/onecx-announcement/team.csv"
 }
 
@@ -11,7 +11,7 @@ module "onecx-announcement-team" {
 module "onecx-announcement" {
   source = "../../modules/product"
   repository_name        = "onecx-announcement"
-  repository_description = "OneCx Announcement"
+  repository_description = "OneCX Announcement"
   homepage_url           = "https://onecx.github.io/docs/onecx-announcement/current/general/index.html"
   topics                 = ["product", "announcement"]
   team_id                = module.onecx-announcement-team.team_id
@@ -22,7 +22,7 @@ module "onecx-announcement" {
 module "onecx-announcement-svc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-announcement-svc"
-  repository_description = "OneCx Announcement Service"
+  repository_description = "OneCX Announcement Backend Service"
   homepage_url           = "https://onecx.github.io/docs/onecx-announcement/current/onecx-announcement-svc/index.html"
   topics                 = ["java", "quarkus", "svc", "announcement"]
   team_id                = module.onecx-announcement-team.team_id
@@ -32,7 +32,7 @@ module "onecx-announcement-svc" {
 module "onecx-announcement-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-announcement-bff"
-  repository_description = "OneCx Announcement BFF"
+  repository_description = "OneCX Announcement Backend-For-Frontend"
   homepage_url           = "https://onecx.github.io/docs/onecx-announcement/current/onecx-announcement-bff/index.html"
   topics                 = ["java", "quarkus", "bff", "announcement"]
   team_id                = module.onecx-announcement-team.team_id
@@ -42,7 +42,7 @@ module "onecx-announcement-bff" {
 module "onecx-announcement-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-announcement-ui"
-  repository_description = "OneCx Announcement UI"
+  repository_description = "OneCX Announcement UI"
   homepage_url           = "https://onecx.github.io/docs/onecx-announcement/current/onecx-announcement-bff/index.html"
   topics                 = ["angular", "ui", "announcement"]
   team_id                = module.onecx-announcement-team.team_id

@@ -11,7 +11,7 @@ module "onecx-k8s" {
 module "onecx-k8s-product" {
   source = "../../modules/product"
   repository_name        = "onecx-k8s"
-  repository_description = "OneCx K8S Management"
+  repository_description = "OneCX K8s Management"
   topics                 = ["product", "k8s"]
   team_id                = module.onecx-k8s.team_id
   team_name              = module.onecx-k8s.team_name
@@ -21,7 +21,7 @@ module "onecx-k8s-product" {
 module "onecx-k8s-db-postgresql-operator" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-k8s-db-postgresql-operator"
-  repository_description = "onecx postgresql schema operator"
+  repository_description = "onecx PostgreSQL Schema Operator"
   topics                 = ["java", "quarkus", "operator", "k8s"]
   team_id                = module.onecx-k8s.team_id
 }
@@ -30,7 +30,7 @@ module "onecx-k8s-db-postgresql-operator" {
 module "onecx-k8s-crds" {
   source = "../../modules/base"
   repository_name        = "onecx-k8s-crds"
-  repository_description = "OneCx k8s custom resources"
+  repository_description = "OneCX K8s Custom Resources"
   team_id                = module.onecx-k8s.team_id
   team_name              = module.onecx-k8s.team_name
 }

@@ -3,7 +3,7 @@
 module "onecx-hello-world-team" {
   source = "../../modules/github/team"
   team_name        = "onecx-hello-world"
-  team_description = "OneCx Hello World services team"
+  team_description = "OneCX Hello World services team"
   team_members_file_path   = "products/onecx-hello-world/team.csv"
 }
 
@@ -11,7 +11,7 @@ module "onecx-hello-world-team" {
 module "onecx-hello-world" {
   source = "../../modules/product"
   repository_name        = "onecx-hello-world"
-  repository_description = "OneCx Hello World"
+  repository_description = "OneCX Hello World"
   homepage_url           = "https://onecx.github.io/docs/onecx-hello-world/current/general/index.html"
   topics                 = ["product", "hello-world"]
   team_id                = module.onecx-hello-world-team.team_id
@@ -22,7 +22,7 @@ module "onecx-hello-world" {
 module "onecx-hello-world-svc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-hello-world-svc"
-  repository_description = "OneCX Hello World SVC"
+  repository_description = "OneCX Hello World Backend Service"
   homepage_url           = "https://onecx.github.io/docs/onecx-hello-world/current/onecx-hello-world-svc/index.html"
   topics                 = ["java", "quarkus", "svc", "hello-world"]
   team_id                = module.onecx-hello-world-team.team_id
@@ -32,7 +32,7 @@ module "onecx-hello-world-svc" {
 module "onecx-hello-world-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-hello-world-bff"
-  repository_description = "OneCx Hello World BFF"
+  repository_description = "OneCX Hello World Backend-For-Frontend"
   homepage_url           = "https://onecx.github.io/docs/onecx-hello-world/current/onecx-hello-world-bff/index.html"
   topics                 = ["java", "quarkus", "bff", "hello-world"]
   team_id                = module.onecx-hello-world-team.team_id

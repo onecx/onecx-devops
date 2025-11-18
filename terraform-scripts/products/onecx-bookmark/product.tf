@@ -11,7 +11,7 @@ module "onecx-bookmark-team" {
 module "onecx-bookmark" {
   source = "../../modules/product"
   repository_name        = "onecx-bookmark"
-  repository_description = "OneCx Bookmark Management"
+  repository_description = "OneCX Bookmark"
   homepage_url           = "https://onecx.github.io/docs/onecx-bookmark/current/general/index.html"
   topics                 = ["product", "bookmark"]
   team_id                = module.onecx-bookmark-team.team_id
@@ -22,7 +22,7 @@ module "onecx-bookmark" {
 module "onecx-bookmark-svc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-bookmark-svc"
-  repository_description = "OneCx Bookmark Management Service"
+  repository_description = "OneCX Bookmark Backend Service"
   homepage_url           = "https://onecx.github.io/docs/onecx-bookmark/current/onecx-bookmark-svc/index.html"
   topics                 = ["java", "quarkus", "svc", "bookmark"]
   team_id                = module.onecx-bookmark-team.team_id
@@ -32,7 +32,7 @@ module "onecx-bookmark-svc" {
 module "onecx-bookmark-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-bookmark-bff"
-  repository_description = "OneCx Bookmark Management BFF"
+  repository_description = "OneCX Bookmark Backend-For-Frontend"
   homepage_url           = "https://onecx.github.io/docs/onecx-bookmark/current/onecx-bookmark-bff/index.html"
   topics                 = ["java", "quarkus", "bff", "bookmark"]
   team_id                = module.onecx-bookmark-team.team_id
@@ -42,7 +42,7 @@ module "onecx-bookmark-bff" {
 module "onecx-bookmark-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-bookmark-ui"
-  repository_description = "OneCx Bookmark Management UI"
+  repository_description = "OneCX Bookmark UI"
   homepage_url           = "https://onecx.github.io/docs/onecx-bookmark/current/onecx-bookmark-ui/index.html"
   topics                 = ["angular", "ui", "bookmark"]
   team_id                = module.onecx-bookmark-team.team_id

@@ -3,7 +3,7 @@
 module "onecx-test-team" {
   source = "../../modules/github/team"
   team_name        = "onecx-test"
-  team_description = "OneCx test services team"
+  team_description = "OneCX test services team"
   team_members_file_path   = "products/onecx-test/team.csv"
 }
 
@@ -11,7 +11,7 @@ module "onecx-test-team" {
 module "onecx-test" {
   source = "../../modules/product"
   repository_name        = "onecx-test"
-  repository_description = "OneCx test"
+  repository_description = "OneCX Test"
   homepage_url           = "https://onecx.github.io/docs/onecx-test/current/general/index.html"
   topics                 = ["product", "test"]
   team_id                = module.onecx-test-team.team_id
@@ -22,7 +22,7 @@ module "onecx-test" {
 module "onecx-test-operator" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-test-operator"
-  repository_description = "OneCX test operator"
+  repository_description = "OneCX Test Operator"
   homepage_url           = "https://onecx.github.io/docs/onecx-test/current/onecx-test-operator/index.html"
   topics                 = ["java", "quarkus", "operator", "test"]
   team_id                = module.onecx-test-team.team_id
@@ -32,7 +32,7 @@ module "onecx-test-operator" {
 module "onecx-test-oidc" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-test-oidc"
-  repository_description = "OneCX test oidc"
+  repository_description = "OneCX Test OIDC"
   homepage_url           = "https://onecx.github.io/docs/onecx-test/current/onecx-test-oidc/index.html"
   topics                 = ["java", "quarkus", "svc", "test"]
   team_id                = module.onecx-test-team.team_id

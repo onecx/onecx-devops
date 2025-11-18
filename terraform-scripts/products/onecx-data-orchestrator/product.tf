@@ -2,7 +2,7 @@
 module "onecx-data-orchestrator-team" {
   source = "../../modules/github/team"
   team_name        = "onecx-data-orchestrator"
-  team_description = "OneCx data orchestrator services team"
+  team_description = "OneCX data orchestrator services team"
   team_members_file_path   = "products/onecx-data-orchestrator/team.csv"
 }
 
@@ -10,7 +10,7 @@ module "onecx-data-orchestrator-team" {
 module "onecx-data-orchestrator" {
   source = "../../modules/product"
   repository_name        = "onecx-data-orchestrator"
-  repository_description = "OneCx data orchestrator"
+  repository_description = "OneCX Data Orchestrator"
   homepage_url           = "https://onecx.github.io/docs/onecx-data-orchestrator/current/general/index.html"
   topics                 = ["product", "data-orchestrator"]
   team_id                = module.onecx-data-orchestrator-team.team_id
@@ -21,7 +21,7 @@ module "onecx-data-orchestrator" {
 module "onecx-data-orchestrator-operator" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-data-orchestrator-operator"
-  repository_description = "OneCx data orchestrator operator"
+  repository_description = "OneCX Data Orchestrator Operator"
   homepage_url           = "https://onecx.github.io/docs/onecx-data-orchestrator/current/onecx-data-orchestrator-operator/index.html"
   topics                 = ["java", "quarkus", "operator", "data-orchestrator"]
   team_id                = module.onecx-data-orchestrator-team.team_id
@@ -32,7 +32,7 @@ module "onecx-data-orchestrator-operator" {
 module "onecx-data-orchestrator-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-data-orchestrator-bff"
-  repository_description = "OneCX data orchestrator BFF"
+  repository_description = "OneCX Data Orchestrator Backend-For-Frontend"
   homepage_url           = "https://onecx.github.io/docs/onecx-data-orchestrator/current/onecx-data-orchestrator-bff/index.html"
   topics                 = ["java", "quarkus", "bff", "data-orchestrator"]
   team_id                = module.onecx-data-orchestrator-team.team_id
@@ -42,7 +42,7 @@ module "onecx-data-orchestrator-bff" {
 module "onecx-data-orchestrator-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-data-orchestrator-ui"
-  repository_description = "OneCX data orchestrator UI"
+  repository_description = "OneCX Data Orchestrator UI"
   homepage_url           = "https://onecx.github.io/docs/onecx-data-orchestrator/current/onecx-data-orchestrator-ui/index.html"
   topics                 = ["angular", "ui", "data-orchestrator"]
   team_id                = module.onecx-data-orchestrator-team.team_id
