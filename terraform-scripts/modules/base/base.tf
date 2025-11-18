@@ -3,6 +3,8 @@ module "repository" {
   source = "../github/repository"
   repository_name        = var.repository_name
   repository_description = var.repository_description
+  homepage_url          = var.homepage_url
+  topics               = var.topics
   team_permission        = var.team_permission
   team_id                = var.team_id
   branch                 = var.branch
