@@ -97,3 +97,11 @@ module "onecx-admin" {
 module "onecx-hello-world" {
   source = "./products/onecx-hello-world"
 }
+
+module "onecx-ai-provider" {
+  source = "./products/onecx-ai-provider"
+}
+
+module "onecx-chat" {
+  source = "./products/onecx-chat"
+}
