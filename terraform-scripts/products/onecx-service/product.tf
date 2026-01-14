@@ -32,8 +32,8 @@ module "onecx-service-redirect" {
 module "onecx-service-auth-ui" {
   source = "../../modules/angular"
   repository_name        = "onecx-service-auth-ui"
-  repository_description = "OneCX Service Auth UI"
-  topics                 = ["angular", "ui", "service"]
+  repository_description = "OneCX Service Custom Auth UI"
+  topics                 = ["angular", "ui", "service", "auth"]
   team_id                = module.onecx-service-team.team_id
 }
 
@@ -41,7 +41,7 @@ module "onecx-service-auth-ui" {
 module "onecx-service-auth-bff" {
   source = "../../modules/quarkus"
   repository_name        = "onecx-service-auth-bff"
-  repository_description = "OneCX Service Auth Backend-For-Frontend"
-  topics                 = ["java", "quarkus", "bff", "service"]
+  repository_description = "OneCX Service Custom Auth Backend-For-Frontend"
+  topics                 = ["java", "quarkus", "bff", "service", "auth"]
   team_id                = module.onecx-service-team.team_id
 }
