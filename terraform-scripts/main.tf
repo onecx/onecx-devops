@@ -117,3 +117,7 @@ module "onecx-notification" {
 module "onecx-ai-agents" {
   source = "./products/onecx-ai-agents"
 }
+
+module "onecx-file-storage" {
+  source = "./products/onecx-file-storage"
+}
