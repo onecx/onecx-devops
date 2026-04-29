@@ -18,16 +18,6 @@ module "onecx-iam" {
   team_name              = module.onecx-iam-team.team_name
 }
 
-# ONECX-IAM-KC-SVC
-module "onecx-iam-kc-svc" {
-  source = "../../modules/quarkus"
-  repository_name        = "onecx-iam-kc-svc"
-  repository_description = "OneCX Identity Access Management Keycloak Backend Service"
-  homepage_url           = "https://onecx.github.io/docs/onecx-iam/current/onecx-iam-kc-svc"
-  topics                 = ["java", "quarkus", "svc", "iam"]
-  team_id                = module.onecx-iam-team.team_id
-}
-
 # ONECX-IAM-KC-CLIENT-OPERATOR
 module "onecx-iam-kc-client-operator" {
   source = "../../modules/quarkus"
