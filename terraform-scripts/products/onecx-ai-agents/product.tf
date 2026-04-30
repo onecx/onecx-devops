@@ -10,7 +10,7 @@ module "onecx-ai-agents-team" {
 module "onecx-ai-agents-init" {
   source = "../../modules/base"
   repository_name        = "onecx-ai-agents-init"
-  repository_description = "Initialization script for creating new workspaces containing all necessary AI instructions to get started with a new OneCX project."
+  repository_description = "Initialization script for creating new workspaces containing AI instructions to get started with a new OneCX project in an AI-accelerated manner."
   homepage_url           = "https://onecx.github.io/docs/documentation/current/"
   topics                 = ["ai", "agents", "skills", "prompts", "instructions"]
   team_id                = module.onecx-ai-agents-team.team_id
@@ -20,7 +20,7 @@ module "onecx-ai-agents-init" {
 module "onecx-ai-agents-toolkit" {
   source = "../../modules/base"
   repository_name        = "onecx-ai-agents-toolkit"
-  repository_description = "AI-Toolkit containing various use-case specific Skills, Agents, Prompts and Instrctions that simplify working with OneCX."
+  repository_description = "AI-Toolkit containing various use-case specific Skills, Agents, Prompts and Instructions that simplify working with OneCX."
   homepage_url           = "https://onecx.github.io/docs/documentation/current/"
   topics                 = ["ai", "agents", "skills", "prompts", "instructions"]
   team_id                = module.onecx-ai-agents-team.team_id

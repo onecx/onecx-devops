@@ -62,10 +62,6 @@ module "onecx-shell" {
   source = "./products/onecx-shell"
 }
 
-module "onecx-example" {
-  source = "./products/onecx-example"
-}
-
 module "onecx-data-orchestrator" {
   source = "./products/onecx-data-orchestrator"
 }
