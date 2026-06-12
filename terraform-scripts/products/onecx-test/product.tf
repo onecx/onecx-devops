@@ -37,3 +37,13 @@ module "onecx-test-oidc" {
   topics                 = ["java", "quarkus", "svc", "test"]
   team_id                = module.onecx-test-team.team_id
 }
+
+# ONECX-TEST-OIDC-UI
+module "onecx-test-oidc-ui" {
+  source = "../../modules/angular"
+  repository_name        = "onecx-test-oidc-ui"
+  repository_description = "OneCX Test OIDC UI"
+  homepage_url           = "https://onecx.github.io/docs/onecx-test/current/onecx-test-oidc-ui"
+  topics                 = ["angular", "ui", "test"]
+  team_id                = module.onecx-test-team.team_id
+}
