@@ -28,6 +28,16 @@ module "onecx-ai-provider-svc" {
   team_id                = module.onecx-ai-provider-team.team_id
 }
 
+# ONECX-AI-PROVIDER-RUNTIME
+module "onecx-ai-provider-runtime" {
+  source = "../../modules/quarkus"
+  repository_name        = "onecx-ai-provider-runtime"
+  repository_description = "OneCX AI Provider Runtime Service"
+  homepage_url           = "https://onecx.github.io/docs/onecx-ai-provider/current/onecx-ai-provider-runtime"
+  topics                 = ["java", "quarkus", "runtime", "ai-provider"]
+  team_id                = module.onecx-ai-provider-team.team_id
+}
+
 # ONECX-AI-PROVIDER-BFF
 module "onecx-ai-provider-bff" {
   source = "../../modules/quarkus"
